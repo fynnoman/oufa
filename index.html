@@ -1,0 +1,1584 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Oufa Hairstyling — Friseursalon Saarbrücken</title>
+<meta name="description" content="Oufa Hairstyling in Saarbrücken — modernes Friseur-Atelier mit orientalisch inspiriertem Stil. Schnitt, Farbe, Styling. Termin: 0160 76 34 655." />
+<meta name="theme-color" content="#0c0a09" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg:           #0c0a09;
+    --bg-2:         #14110f;
+    --surface:      #1c1917;
+    --surface-2:    #221d1a;
+    --line:         #2a2420;
+    --cream:        #f6efe3;
+    --cream-2:      #efe6d3;
+    --muted:        #b9ad97;
+    --ink:          #0c0a09;
+    --gold:         #d4a64a;
+    --gold-2:       #b9892f;
+    --gold-3:       #f3d27b;
+    --gold-soft:    rgba(212, 166, 74, 0.18);
+    --emerald:      #1f4039;
+
+    --font-display: "Cinzel", "Cormorant", serif;
+    --font-serif:   "Cormorant", "Playfair Display", Georgia, serif;
+    --font-sans:    "Montserrat", "Inter", system-ui, -apple-system, sans-serif;
+
+    --r-sm: 6px;
+    --r-md: 12px;
+    --r-lg: 22px;
+    --r-xl: 32px;
+
+    --shadow-sm: 0 4px 12px rgba(0,0,0,.35);
+    --shadow-md: 0 12px 40px rgba(0,0,0,.45);
+    --shadow-glow: 0 0 0 1px rgba(212,166,74,.22), 0 20px 60px -20px rgba(212,166,74,.25);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--cream);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+
+  ::selection { background: var(--gold); color: var(--ink); }
+
+  .container {
+    width: 100%;
+    max-width: 1240px;
+    padding: 0 24px;
+    margin: 0 auto;
+  }
+
+  /* ---------- Gold text / utilities ---------- */
+  .gold-text {
+    background: linear-gradient(135deg, var(--gold-3) 0%, var(--gold) 45%, var(--gold-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::before, .eyebrow::after {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .eyebrow.left::before { display: none; }
+  .eyebrow.right::after { display: none; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    margin: 0;
+    line-height: 1.08;
+  }
+  h2 { font-size: clamp(34px, 4.6vw, 60px); }
+  h3 { font-size: clamp(22px, 2.2vw, 28px); font-weight: 600; }
+  p { margin: 0; }
+
+  /* ---------- Ornament divider ---------- */
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 56px 0;
+    color: var(--gold);
+    opacity: .85;
+  }
+  .ornament .line {
+    height: 1px;
+    flex: 1;
+    max-width: 240px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .ornament .glyph {
+    width: 34px; height: 34px;
+    display: grid; place-items: center;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 28px;
+    border-radius: 999px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold-3), var(--gold) 60%, var(--gold-2));
+    color: var(--ink);
+    box-shadow: 0 10px 30px -10px rgba(212,166,74,.55), inset 0 1px 0 rgba(255,255,255,.4);
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -10px rgba(212,166,74,.65); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid rgba(246,239,227,.22);
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-dark {
+    background: var(--ink);
+    color: var(--cream);
+    border: 1px solid rgba(212,166,74,.4);
+  }
+  .btn-dark:hover { background: #1a1714; border-color: var(--gold); }
+
+  /* ---------- Header / Nav ---------- */
+  header.site {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 60;
+    transition: background .35s ease, backdrop-filter .35s ease, border-color .35s ease;
+    border-bottom: 1px solid transparent;
+  }
+  header.site.scrolled {
+    background: rgba(12,10,9,.78);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom-color: rgba(212,166,74,.18);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 0;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: .14em;
+  }
+  .brand .mark {
+    width: 38px; height: 38px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--gold-3), var(--gold-2) 70%, #6b4d12 100%);
+    box-shadow: 0 6px 20px -6px rgba(212,166,74,.55);
+    color: var(--ink);
+  }
+  .brand .name { display: inline-flex; flex-direction: column; line-height: 1; }
+  .brand .name strong { font-weight: 600; letter-spacing: .22em; }
+  .brand .name span {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    letter-spacing: .35em;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  nav.links {
+    display: flex; gap: 36px;
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  nav.links a {
+    position: relative;
+    padding: 6px 0;
+    color: var(--cream);
+    opacity: .85;
+    transition: color .25s ease, opacity .25s ease;
+  }
+  nav.links a::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s ease;
+  }
+  nav.links a:hover { color: var(--gold); opacity: 1; }
+  nav.links a:hover::after { transform: scaleX(1); }
+  .nav-cta { display: flex; align-items: center; gap: 14px; }
+  .nav-cta .btn { padding: 12px 22px; font-size: 12px; }
+  .menu-toggle {
+    display: none;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(212,166,74,.4);
+    align-items: center; justify-content: center;
+  }
+  .menu-toggle:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 160px 0 120px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(60% 50% at 85% 15%, rgba(212,166,74,.18), transparent 60%),
+      radial-gradient(50% 40% at 0% 100%, rgba(31,64,57,.25), transparent 60%),
+      linear-gradient(180deg, #0c0a09 0%, #14110f 70%, #0c0a09 100%);
+    z-index: -2;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='%23d4a64a' stroke-width='.6' opacity='.22'><path d='M40 0 L80 40 L40 80 L0 40 Z'/><path d='M40 14 L66 40 L40 66 L14 40 Z'/><circle cx='40' cy='40' r='6'/></g></svg>");
+    background-size: 120px 120px;
+    opacity: .35;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 80%);
+    z-index: -1;
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(46px, 7vw, 96px);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    margin-top: 28px;
+  }
+  .hero h1 .accent {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .hero p.lead {
+    margin-top: 28px;
+    font-family: var(--font-serif);
+    font-size: clamp(18px, 1.5vw, 22px);
+    color: var(--muted);
+    max-width: 540px;
+    line-height: 1.55;
+  }
+  .hero-cta {
+    margin-top: 44px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .hero-meta {
+    margin-top: 56px;
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    align-items: center;
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: .12em;
+  }
+  .hero-meta .stars { color: var(--gold); letter-spacing: 2px; font-size: 16px; }
+  .hero-meta strong { color: var(--cream); font-weight: 500; }
+
+  /* Hero showcase card */
+  .hero-card {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    background: linear-gradient(160deg, #1c1917, #0c0a09 70%);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(212,166,74,.25);
+  }
+  .hero-card::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: linear-gradient(180deg, rgba(12,10,9,.15) 0%, rgba(12,10,9,0) 35%, rgba(12,10,9,.85) 100%);
+    pointer-events: none;
+  }
+  .hero-card .arabesque { display: none; }
+  .hero-card .label {
+    position: absolute;
+    left: 28px; bottom: 28px;
+    right: 28px;
+    color: var(--cream);
+  }
+  .hero-card .label .num {
+    font-family: var(--font-display);
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: .04em;
+  }
+  .hero-card .label .desc {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .hero-card .corner {
+    position: absolute;
+    width: 64px; height: 64px;
+    border: 1px solid var(--gold);
+    opacity: .65;
+  }
+  .hero-card .corner.tl { top: 16px; left: 16px; border-right: 0; border-bottom: 0; }
+  .hero-card .corner.tr { top: 16px; right: 16px; border-left: 0; border-bottom: 0; }
+  .hero-card .corner.bl { bottom: 16px; left: 16px; border-right: 0; border-top: 0; }
+  .hero-card .corner.br { bottom: 16px; right: 16px; border-left: 0; border-top: 0; }
+  .hero-card .badge {
+    position: absolute;
+    top: 28px; right: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(12,10,9,.55);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212,166,74,.4);
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Sections base ---------- */
+  section { position: relative; padding: 120px 0; }
+  section .section-head { text-align: center; margin-bottom: 72px; }
+  section .section-head h2 { margin-top: 18px; }
+  section .section-head p {
+    margin-top: 22px;
+    font-family: var(--font-serif);
+    font-size: 19px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ---------- About ---------- */
+  .about {
+    background: var(--bg-2);
+    overflow: hidden;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-visual {
+    position: relative;
+    aspect-ratio: 5/6;
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    background: linear-gradient(135deg, #1c1917 0%, #14110f 60%, #221d1a 100%);
+    border: 1px solid var(--line);
+  }
+  .about-visual::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: linear-gradient(180deg, rgba(12,10,9,.15) 0%, rgba(12,10,9,0) 30%, rgba(12,10,9,.9) 100%);
+    pointer-events: none;
+  }
+  .about-visual .quote {
+    position: absolute;
+    bottom: 36px; left: 36px; right: 36px;
+    color: var(--cream);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.4;
+  }
+  .about-visual .quote::before {
+    content: "“";
+    display: block;
+    font-family: var(--font-display);
+    font-style: normal;
+    font-size: 80px;
+    line-height: 1;
+    color: var(--gold);
+    margin-bottom: -20px;
+  }
+  .about-text h2 { margin-top: 18px; }
+  .about-text p {
+    margin-top: 22px;
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+    padding-top: 36px;
+    border-top: 1px solid var(--line);
+  }
+  .stat .v {
+    font-family: var(--font-display);
+    font-size: 36px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat .l {
+    margin-top: 8px;
+    font-size: 12px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ---------- Services ---------- */
+  .services { background: var(--bg); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .service {
+    position: relative;
+    padding: 44px 36px;
+    background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+    overflow: hidden;
+  }
+  .service::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(70% 60% at 50% 0%, var(--gold-soft), transparent 65%);
+    opacity: 0;
+    transition: opacity .35s ease;
+    pointer-events: none;
+  }
+  .service:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212,166,74,.45);
+    box-shadow: var(--shadow-glow);
+  }
+  .service:hover::before { opacity: 1; }
+  .service .icon {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    background: linear-gradient(135deg, rgba(212,166,74,.18), rgba(212,166,74,.04));
+    border: 1px solid rgba(212,166,74,.35);
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+  .service h3 { color: var(--cream); }
+  .service p {
+    margin-top: 14px;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .service .price {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--font-serif);
+  }
+  .service .price .from {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: .2em;
+    text-transform: uppercase;
+  }
+  .service .price .amount {
+    font-size: 24px;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* ---------- Experience strip ---------- */
+  .experience {
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+    padding: 80px 0;
+  }
+  .exp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+  .exp-item .ic {
+    width: 64px; height: 64px;
+    margin: 0 auto 18px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(212,166,74,.35);
+    color: var(--gold);
+    background: rgba(212,166,74,.06);
+  }
+  .exp-item h4 {
+    font-family: var(--font-serif);
+    color: var(--cream);
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .exp-item p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  /* ---------- Testimonials ---------- */
+  .testimonials {
+    background: var(--cream);
+    color: var(--ink);
+  }
+  .testimonials .eyebrow { color: var(--gold-2); }
+  .testimonials .eyebrow::before, .testimonials .eyebrow::after {
+    background: linear-gradient(90deg, transparent, var(--gold-2), transparent);
+  }
+  .testimonials .section-head h2 { color: var(--ink); }
+  .testimonials .section-head p { color: #5a4f3e; }
+  .reviews-summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+    margin: -20px auto 64px;
+    padding: 28px 40px;
+    background: #fff;
+    border-radius: var(--r-lg);
+    border: 1px solid rgba(212,166,74,.22);
+    max-width: 720px;
+    box-shadow: 0 14px 50px -20px rgba(212,166,74,.25);
+    flex-wrap: wrap;
+  }
+  .reviews-summary .big {
+    font-family: var(--font-display);
+    font-size: 56px;
+    color: var(--gold-2);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .reviews-summary .stars { color: var(--gold); font-size: 22px; letter-spacing: 4px; }
+  .reviews-summary small {
+    font-family: var(--font-sans);
+    color: #5a4f3e;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    font-size: 11px;
+    display: block;
+    margin-top: 6px;
+  }
+  .reviews-summary .src {
+    font-family: var(--font-serif);
+    color: var(--ink);
+    font-size: 18px;
+  }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .review {
+    background: #fff;
+    border-radius: var(--r-lg);
+    padding: 40px 34px;
+    border: 1px solid rgba(212,166,74,.2);
+    position: relative;
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .review:hover { transform: translateY(-4px); box-shadow: 0 18px 50px -22px rgba(28,25,23,.2); }
+  .review .quote {
+    position: absolute;
+    top: -14px; left: 28px;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    background: linear-gradient(135deg, var(--gold-3), var(--gold-2));
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 26px;
+    line-height: 1;
+    box-shadow: 0 8px 18px -6px rgba(212,166,74,.5);
+  }
+  .review .stars { color: var(--gold); letter-spacing: 3px; font-size: 14px; }
+  .review p {
+    margin-top: 18px;
+    font-family: var(--font-serif);
+    font-size: 18px;
+    color: #2a2018;
+    line-height: 1.6;
+  }
+  .review .who {
+    margin-top: 26px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(28,25,23,.08);
+    font-size: 13px;
+    color: #6b5b45;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Gallery ---------- */
+  .gallery { background: var(--bg); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 220px;
+    gap: 16px;
+  }
+  .tile {
+    position: relative;
+    border-radius: var(--r-md);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: linear-gradient(135deg, #1c1917, #14110f);
+    isolation: isolate;
+    transition: transform .35s ease, border-color .35s ease;
+  }
+  .tile::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: linear-gradient(180deg, rgba(12,10,9,.08) 0%, rgba(12,10,9,0) 45%, rgba(12,10,9,.78) 100%);
+    pointer-events: none;
+    transition: background-image .35s ease;
+  }
+  .tile:hover::before {
+    background-image: linear-gradient(180deg, rgba(12,10,9,0) 0%, rgba(12,10,9,0) 50%, rgba(12,10,9,.6) 100%);
+  }
+  .tile:hover { transform: translateY(-4px); border-color: rgba(212,166,74,.45); }
+  .tile .label {
+    position: absolute;
+    left: 18px; bottom: 18px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--cream);
+    font-size: 18px;
+  }
+  .tile .label small {
+    display: block;
+    font-family: var(--font-sans);
+    font-style: normal;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .tile.t1 { grid-column: span 2; grid-row: span 2; }
+  .tile.t2 { grid-column: span 1; grid-row: span 1; }
+  .tile.t3 { grid-column: span 1; grid-row: span 2; }
+  .tile.t4 { grid-column: span 1; grid-row: span 1; }
+  .tile.t5 { grid-column: span 2; grid-row: span 1; }
+  .tile.t6 { grid-column: span 1; grid-row: span 1; }
+
+  /* ---------- Booking CTA ---------- */
+  .booking {
+    position: relative;
+    padding: 120px 0;
+    overflow: hidden;
+    background: var(--bg-2);
+  }
+  .booking::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(50% 60% at 50% 50%, rgba(212,166,74,.16), transparent 60%);
+    pointer-events: none;
+  }
+  .booking-card {
+    position: relative;
+    background: linear-gradient(160deg, #1c1917 0%, #0c0a09 100%);
+    border: 1px solid rgba(212,166,74,.3);
+    border-radius: var(--r-xl);
+    padding: 80px 60px;
+    text-align: center;
+    box-shadow: var(--shadow-glow);
+    overflow: hidden;
+  }
+  .booking-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='none' stroke='%23d4a64a' stroke-width='.5' opacity='.18'><path d='M60 0 L120 60 L60 120 L0 60 Z'/><path d='M60 20 L100 60 L60 100 L20 60 Z'/><circle cx='60' cy='60' r='12'/></g></svg>");
+    background-size: 160px 160px;
+    pointer-events: none;
+  }
+  .booking-card h2 { position: relative; }
+  .booking-card .lead {
+    position: relative;
+    margin: 22px auto 40px;
+    max-width: 520px;
+    font-family: var(--font-serif);
+    color: var(--muted);
+    font-size: 19px;
+  }
+  .booking-card .ctas {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact { background: var(--bg); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 48px;
+    align-items: stretch;
+  }
+  .contact-info {
+    background: linear-gradient(180deg, var(--surface), var(--surface-2));
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    padding: 48px 40px;
+    display: flex; flex-direction: column;
+    gap: 28px;
+  }
+  .info-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .info-item:last-child { border-bottom: 0; }
+  .info-item .ic {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    background: rgba(212,166,74,.08);
+    border: 1px solid rgba(212,166,74,.3);
+    color: var(--gold);
+  }
+  .info-item h4 {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--gold);
+  }
+  .info-item p, .info-item a {
+    font-family: var(--font-serif);
+    color: var(--cream);
+    font-size: 19px;
+    margin-top: 4px;
+    line-height: 1.45;
+    transition: color .25s ease;
+  }
+  .info-item a:hover { color: var(--gold); }
+  .info-item small {
+    display: block;
+    font-family: var(--font-sans);
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 6px;
+    letter-spacing: .04em;
+  }
+  .hours-list {
+    list-style: none;
+    padding: 0; margin: 6px 0 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 6px 16px;
+    font-family: var(--font-serif);
+    font-size: 16px;
+    color: var(--cream);
+  }
+  .hours-list dt { color: var(--muted); }
+  .hours-list dd { margin: 0; }
+  .hours-list .today { color: var(--gold); }
+
+  .map-wrap {
+    position: relative;
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    min-height: 520px;
+    background: linear-gradient(160deg, #1c1917, #0c0a09);
+  }
+  .map-wrap iframe {
+    width: 100%; height: 100%; min-height: 520px;
+    border: 0;
+    filter: invert(.92) hue-rotate(180deg) saturate(.6) brightness(.95) contrast(1.05);
+  }
+  .map-overlay {
+    position: absolute;
+    inset: auto 24px 24px 24px;
+    padding: 18px 24px;
+    background: rgba(12,10,9,.78);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212,166,74,.3);
+    border-radius: var(--r-md);
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    color: var(--cream);
+    flex-wrap: wrap;
+  }
+  .map-overlay p {
+    font-family: var(--font-serif);
+    font-size: 16px;
+  }
+  .map-overlay small {
+    display: block;
+    font-family: var(--font-sans);
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: #08070700;
+    border-top: 1px solid var(--line);
+    padding: 60px 0 40px;
+    background: #08060500;
+  }
+  .foot {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .foot .brand { font-size: 18px; }
+  .foot p, .foot a, .foot li {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .foot h5 {
+    font-family: var(--font-sans);
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--gold);
+    margin: 0 0 16px;
+    font-weight: 600;
+  }
+  .foot ul { list-style: none; padding: 0; margin: 0; }
+  .foot a:hover { color: var(--gold); }
+  .foot-bottom {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* ---------- Floating action button ---------- */
+  .fab {
+    position: fixed;
+    right: 24px; bottom: 24px;
+    z-index: 70;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    background: linear-gradient(135deg, var(--gold-3), var(--gold-2));
+    color: var(--ink);
+    box-shadow: 0 14px 40px -10px rgba(212,166,74,.6);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .fab:hover { transform: translateY(-3px) scale(1.04); }
+  .fab::after {
+    content: "";
+    position: absolute; inset: -6px;
+    border-radius: 50%;
+    border: 1px solid rgba(212,166,74,.4);
+    animation: pulse 2.2s ease-out infinite;
+  }
+  @keyframes pulse {
+    0% { transform: scale(.95); opacity: .8; }
+    100% { transform: scale(1.35); opacity: 0; }
+  }
+
+  /* ---------- Reveal animations ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .9s ease, transform .9s ease;
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .fab::after { animation: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 980px) {
+    nav.links { display: none; }
+    .menu-toggle { display: inline-flex; }
+    .nav-cta .btn-ghost { display: none; }
+    .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+    .hero-card { max-width: 460px; margin: 0 auto; }
+    .about-grid { grid-template-columns: 1fr; gap: 56px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .exp-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
+    .tile.t1, .tile.t3, .tile.t5 { grid-column: span 2; grid-row: span 1; }
+    .tile.t1 { grid-row: span 2; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .booking-card { padding: 56px 28px; }
+    .foot { grid-template-columns: 1fr; }
+    .foot-bottom { flex-direction: column; text-align: center; }
+    section { padding: 90px 0; }
+    .hero { padding: 140px 0 90px; }
+  }
+  @media (max-width: 560px) {
+    .container { padding: 0 20px; }
+    .btn { padding: 14px 22px; font-size: 12px; }
+    .reviews-summary { gap: 18px; padding: 22px 24px; }
+    .reviews-summary .big { font-size: 44px; }
+    .booking-card { padding: 48px 22px; }
+    .booking-card .lead { font-size: 17px; }
+    .info-item { grid-template-columns: 40px 1fr; gap: 14px; }
+    .info-item .ic { width: 40px; height: 40px; }
+    .info-item p, .info-item a { font-size: 16px; }
+    .fab { width: 54px; height: 54px; right: 18px; bottom: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site" id="siteHeader">
+  <div class="container">
+    <div class="nav">
+      <a href="#top" class="brand" aria-label="Oufa Hairstyling — Startseite">
+        <span class="mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 L20 12 L12 22 L4 12 Z"/>
+            <path d="M12 6 L17 12 L12 18 L7 12 Z"/>
+          </svg>
+        </span>
+        <span class="name">
+          <strong>OUFA</strong>
+          <span>HAIRSTYLING</span>
+        </span>
+      </a>
+
+      <nav class="links" aria-label="Hauptnavigation">
+        <a href="#about">Salon</a>
+        <a href="#services">Leistungen</a>
+        <a href="#testimonials">Erlebnisse</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="tel:+491607634655">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Anrufen
+        </a>
+        <a class="btn btn-gold" href="#booking">Termin buchen</a>
+        <button class="menu-toggle" aria-label="Menü öffnen" id="menuBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">Friseur-Atelier · Saarbrücken</span>
+        <h1>
+          Wo orientalische <span class="accent gold-text">Eleganz</span><br />
+          auf moderne Kunst trifft.
+        </h1>
+        <p class="lead">
+          Willkommen bei <strong style="color:var(--cream)">Oufa Hairstyling</strong> — ein Salon, in dem Schnitt, Farbe und Styling
+          mit Ruhe, Präzision und einem Hauch Dubai-Glamour zelebriert werden.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#booking">
+            Termin sichern
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#services">Leistungen ansehen</a>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <strong> 4,9 / 5</strong> · 56 Google-Bewertungen
+          </div>
+          <div>
+            <strong>Geöffnet</strong> · heute bis 19:00 Uhr
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card reveal" aria-hidden="true" style="background: url('https://i.ibb.co/HTTgxpSC/Bild-01-06-26-um-17-55.png') center/cover no-repeat #0c0a09;">
+        <span class="corner tl"></span>
+        <span class="corner tr"></span>
+        <span class="corner bl"></span>
+        <span class="corner br"></span>
+        <span class="arabesque"></span>
+        <span class="badge">⟡ Seit Jahren in Saarbrücken</span>
+        <div class="label">
+          <div class="num gold-text">4,9★</div>
+          <div class="desc">„Professionalität und Leidenschaft im ganzen Team."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal" aria-hidden="true" style="background: url('https://i.ibb.co/27BghpXN/Bild-01-06-26-um-17-55.png') center/cover no-repeat #0c0a09;">
+        <div class="quote">
+          Jeder Schnitt ist eine kleine Zeremonie — wir nehmen uns die Zeit, die Ihr Haar verdient.
+        </div>
+      </div>
+
+      <div class="about-text reveal">
+        <span class="eyebrow left">Unsere Philosophie</span>
+        <h2>Ein <span class="gold-text">Ritual</span> für Haar, Haltung und Hingabe.</h2>
+        <p>
+          Bei Oufa Hairstyling vereinen wir das handwerkliche Erbe orientalischer Friseurkunst mit zeitgemäßer Präzision.
+          Unsere Gäste finden mehr als nur einen Schnitt — sie erleben einen Moment des Innehaltens, geprägt von warmen
+          Materialien, sanften Düften und einem Team, das mit echter Leidenschaft an jedem Detail arbeitet.
+        </p>
+        <p>
+          Ob klassischer Damenschnitt, individuelle Coloration, Brautstyling oder eine Pflegekur für strapaziertes Haar:
+          Wir hören erst zu — und stylen dann. Damit Sie sich am Ende nicht nur schöner, sondern auch wirklich gut fühlen.
+        </p>
+
+        <div class="about-stats">
+          <div class="stat">
+            <div class="v">56+</div>
+            <div class="l">Echte Bewertungen</div>
+          </div>
+          <div class="stat">
+            <div class="v">4,9</div>
+            <div class="l">Google-Sterne</div>
+          </div>
+          <div class="stat">
+            <div class="v">100%</div>
+            <div class="l">Hingabe pro Termin</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Unsere Leistungen</span>
+      <h2>Maßgeschneiderte <span class="gold-text">Friseurkunst</span></h2>
+      <p>Von der täglichen Pflege bis zum großen Anlass — jedes Service-Paket ist auf Ihr Haar, Ihre Wünsche und Ihren Typ abgestimmt.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service reveal">
+        <div class="icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="6" cy="6" r="3"/>
+            <circle cx="6" cy="18" r="3"/>
+            <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+            <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+            <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+          </svg>
+        </div>
+        <h3>Schnitt & Form</h3>
+        <p>Präziser Damen- und Herrenschnitt, abgestimmt auf Gesicht, Haarstruktur und Alltag. Inklusive Beratung und Pflege-Finish.</p>
+        <div class="price">
+          <span class="from">ab</span>
+          <span class="amount">35 €</span>
+        </div>
+      </div>
+
+      <div class="service reveal">
+        <div class="icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3 C 8 8, 8 12, 12 17 C 16 12, 16 8, 12 3 Z"/>
+            <path d="M12 17 C 12 17, 8 19, 6 22 L 18 22 C 16 19, 12 17, 12 17 Z"/>
+          </svg>
+        </div>
+        <h3>Farbe & Coloration</h3>
+        <p>Von dezenten Glossings bis zu warmen Balayage-Tönen — natürliche Farbverläufe, die wirklich halten und Ihrem Teint schmeicheln.</p>
+        <div class="price">
+          <span class="from">ab</span>
+          <span class="amount">65 €</span>
+        </div>
+      </div>
+
+      <div class="service reveal">
+        <div class="icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12 C 7 6, 17 6, 21 12"/>
+            <path d="M3 16 C 7 12, 17 12, 21 16"/>
+            <circle cx="12" cy="3.5" r="1.2"/>
+          </svg>
+        </div>
+        <h3>Styling & Event</h3>
+        <p>Brautstyling, Anlass-Frisuren und Foto-Looks. Perfekt sitzendes Styling, das vom ersten Foto bis zum letzten Tanz hält.</p>
+        <div class="price">
+          <span class="from">ab</span>
+          <span class="amount">55 €</span>
+        </div>
+      </div>
+
+      <div class="service reveal">
+        <div class="icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 L13.5 8.5 L20 10 L13.5 11.5 L12 18 L10.5 11.5 L4 10 L10.5 8.5 Z"/>
+            <circle cx="19" cy="19" r="2"/>
+            <circle cx="5" cy="20" r="1.5"/>
+          </svg>
+        </div>
+        <h3>Glanz-Behandlung</h3>
+        <p>Intensive Pflegerituale mit Argan-, Keratin- oder Botox-Komplex — für seidigen Glanz und spürbar geschmeidige Längen.</p>
+        <div class="price">
+          <span class="from">ab</span>
+          <span class="amount">45 €</span>
+        </div>
+      </div>
+
+      <div class="service reveal">
+        <div class="icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 4 L17 4 L15 12 L9 12 Z"/>
+            <path d="M9 12 L9 20"/>
+            <path d="M15 12 L15 20"/>
+            <path d="M6 20 L18 20"/>
+          </svg>
+        </div>
+        <h3>Hochzeit & Henna</h3>
+        <p>Komplettpaket für Bräute: Probetermin, Hairstyling am großen Tag, Henna-Inspiration und ein ruhiger Rückzugsort vor dem Fest.</p>
+        <div class="price">
+          <span class="from">Paket</span>
+          <span class="amount">auf Anfrage</span>
+        </div>
+      </div>
+
+      <div class="service reveal">
+        <div class="icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="13" r="3"/>
+            <circle cx="15" cy="13" r="3"/>
+            <path d="M9 6 L9 10"/>
+            <path d="M15 6 L15 10"/>
+            <path d="M9 16 C 10 19, 14 19, 15 16"/>
+          </svg>
+        </div>
+        <h3>Kinder & Familie</h3>
+        <p>Geduldige Schnitte für die Kleinsten, abgestimmte Frisuren für Mama, Papa und Geschwister — entspannt an einem Nachmittag.</p>
+        <div class="price">
+          <span class="from">ab</span>
+          <span class="amount">18 €</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ornament" aria-hidden="true">
+      <span class="line"></span>
+      <span class="glyph">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M12 2 L22 12 L12 22 L2 12 Z"/>
+          <path d="M12 7 L17 12 L12 17 L7 12 Z"/>
+          <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="line"></span>
+    </div>
+
+    <p style="text-align:center; color:var(--muted); font-family:var(--font-serif); font-size:18px; font-style:italic; max-width:640px; margin: 0 auto;">
+      Sie haben einen speziellen Wunsch oder möchten ein Paket schnüren? Sprechen Sie uns an — wir gestalten Ihren Termin individuell.
+    </p>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE STRIP ===== -->
+<section class="experience">
+  <div class="container">
+    <div class="exp-grid">
+      <div class="exp-item reveal">
+        <div class="ic" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+        </div>
+        <h4>Wir nehmen uns Zeit</h4>
+        <p>Ruhiger Ablauf — kein Zeitdruck, kein Akkord-Termin.</p>
+      </div>
+      <div class="exp-item reveal">
+        <div class="ic" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L15 9 L22 10 L17 15 L18 22 L12 18 L6 22 L7 15 L2 10 L9 9 Z"/></svg>
+        </div>
+        <h4>4,9-Sterne-Erlebnis</h4>
+        <p>56 echte Bewertungen — Qualität, der unsere Gäste vertrauen.</p>
+      </div>
+      <div class="exp-item reveal">
+        <div class="ic" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h4>Mit Leidenschaft</h4>
+        <p>Ein Team, das sein Handwerk liebt — und das spürt man.</p>
+      </div>
+      <div class="exp-item reveal">
+        <div class="ic" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M9 22V12h6v10"/><path d="M5 22h14"/></svg>
+        </div>
+        <h4>Mitten in Saarbrücken</h4>
+        <p>Dudweilerstraße 2A — gut erreichbar, herzlich willkommen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Erlebnisse unserer Gäste</span>
+      <h2>Geliebt von <span class="gold-text">Saarbrücken</span>.</h2>
+      <p>Echte Stimmen, echte Bewertungen — direkt von Google.</p>
+    </div>
+
+    <div class="reviews-summary reveal">
+      <div>
+        <div class="big">4,9</div>
+        <small>Google Rating</small>
+      </div>
+      <div>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <div class="src">Aus 56 Bewertungen</div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <article class="review reveal">
+        <span class="quote">”</span>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>„Sie hat sich Zeit genommen und alles in nur 30 Minuten perfekt umgesetzt."</p>
+        <div class="who">Google · Zufriedene Gästin</div>
+      </article>
+
+      <article class="review reveal">
+        <span class="quote">”</span>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>„Die Haare sahen soooo gut aus und es hat Mega gehalten."</p>
+        <div class="who">Google · Stammkundin</div>
+      </article>
+
+      <article class="review reveal">
+        <span class="quote">”</span>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>„Man merkt sofort die Professionalität und Leidenschaft im ganzen Team."</p>
+        <div class="who">Google · Neukundin</div>
+      </article>
+    </div>
+
+    <div style="text-align:center; margin-top: 56px;">
+      <a class="btn btn-dark" href="https://www.google.com/search?q=Oufa+Hairstyling+Saarbr%C3%BCcken" target="_blank" rel="noopener noreferrer">
+        Alle Bewertungen lesen
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Atelier-Impressionen</span>
+      <h2>Stimmungen aus unserem <span class="gold-text">Salon</span></h2>
+      <p>Ein kleiner Vorgeschmack — vollständige Bilder ergänzen wir laufend.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="tile t1 reveal" style="background: url('https://i.ibb.co/PZnM9sr5/Bild-01-06-26-um-17-53.png') center/cover no-repeat #0c0a09;"><span class="label"><small>Signature</small>Bridal Glow</span></div>
+      <div class="tile t2 reveal" style="background: url('https://i.ibb.co/RTRRGx14/Bild-01-06-26-um-17-52-1.png') center/cover no-repeat #0c0a09;"><span class="label"><small>Color</small>Bronze Balayage</span></div>
+      <div class="tile t3 reveal" style="background: url('https://i.ibb.co/2Qvw3pb/Bild-01-06-26-um-17-52.png') center/cover no-repeat #0c0a09;"><span class="label"><small>Care</small>Argan Ritual</span></div>
+      <div class="tile t4 reveal" style="background: url('https://i.ibb.co/HTTgxpSC/Bild-01-06-26-um-17-55.png') top center/cover no-repeat #0c0a09;"><span class="label"><small>Cut</small>Modern Bob</span></div>
+      <div class="tile t5 reveal" style="background: url('https://i.ibb.co/27BghpXN/Bild-01-06-26-um-17-55.png') center/cover no-repeat #0c0a09;"><span class="label"><small>Style</small>Oriental Waves</span></div>
+      <div class="tile t6 reveal" style="background: url('https://i.ibb.co/RTRRGx14/Bild-01-06-26-um-17-52-1.png') bottom center/cover no-repeat #0c0a09;"><span class="label"><small>Men</small>Sharp Fade</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOOKING CTA ===== -->
+<section class="booking" id="booking">
+  <div class="container">
+    <div class="booking-card reveal">
+      <span class="eyebrow">Termin sichern</span>
+      <h2 style="margin-top: 18px;">Bereit für Ihr nächstes <span class="gold-text">Hair-Erlebnis</span>?</h2>
+      <p class="lead">Rufen Sie uns einfach an oder schreiben Sie kurz per WhatsApp. Wir finden gemeinsam den passenden Termin.</p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="tel:+491607634655">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0160 76 34 655
+        </a>
+        <a class="btn btn-ghost" href="https://wa.me/491607634655" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          WhatsApp schreiben
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Besuchen Sie uns</span>
+      <h2>Kontakt & <span class="gold-text">Anfahrt</span></h2>
+      <p>Mitten in Saarbrücken — wir freuen uns auf Ihren Besuch.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="info-item">
+          <span class="ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <div>
+            <h4>Adresse</h4>
+            <p>Dudweilerstraße 2A<br />66111 Saarbrücken</p>
+            <small>Plus-Code: 6XPV+2R Saarbrücken</small>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <span class="ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <div>
+            <h4>Telefon</h4>
+            <a href="tel:+491607634655">0160 76 34 655</a>
+            <small>Terminanfragen gerne auch per WhatsApp</small>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <span class="ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <div>
+            <h4>Öffnungszeiten</h4>
+            <dl class="hours-list" id="hoursList">
+              <dt>Montag</dt><dd>09:00 – 19:00</dd>
+              <dt>Dienstag</dt><dd>09:00 – 19:00</dd>
+              <dt>Mittwoch</dt><dd>09:00 – 19:00</dd>
+              <dt>Donnerstag</dt><dd>09:00 – 19:00</dd>
+              <dt>Freitag</dt><dd>09:00 – 19:00</dd>
+              <dt>Samstag</dt><dd>09:00 – 18:00</dd>
+              <dt>Sonntag</dt><dd>Geschlossen</dd>
+            </dl>
+            <small style="margin-top:10px;">Termine bitte vorab vereinbaren.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-wrap reveal">
+        <iframe
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Dudweilerstra%C3%9Fe+2A,+66111+Saarbr%C3%BCcken&hl=de&z=16&output=embed"
+          title="Oufa Hairstyling auf Google Maps"
+          allowfullscreen></iframe>
+        <div class="map-overlay">
+          <div>
+            <p><strong>Oufa Hairstyling</strong></p>
+            <small>Dudweilerstraße 2A · 66111 Saarbrücken</small>
+          </div>
+          <a class="btn btn-gold" style="padding: 12px 20px; font-size: 12px;" href="https://www.google.com/maps/dir/?api=1&destination=Dudweilerstra%C3%9Fe+2A,+66111+Saarbr%C3%BCcken" target="_blank" rel="noopener noreferrer">Route planen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <a href="#top" class="brand">
+          <span class="mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2 L20 12 L12 22 L4 12 Z"/>
+              <path d="M12 6 L17 12 L12 18 L7 12 Z"/>
+            </svg>
+          </span>
+          <span class="name">
+            <strong>OUFA</strong>
+            <span>HAIRSTYLING</span>
+          </span>
+        </a>
+        <p style="margin-top:20px; max-width: 360px;">
+          Friseur-Atelier in Saarbrücken. Schnitt, Farbe, Styling — mit orientalischer Eleganz und moderner Präzision.
+        </p>
+      </div>
+
+      <div>
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="#about">Unser Salon</a></li>
+          <li><a href="#services">Leistungen</a></li>
+          <li><a href="#testimonials">Erlebnisse</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Direkter Draht</h5>
+        <ul>
+          <li><a href="tel:+491607634655">0160 76 34 655</a></li>
+          <li><a href="https://wa.me/491607634655" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li>Dudweilerstraße 2A</li>
+          <li>66111 Saarbrücken</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Oufa Hairstyling · Alle Rechte vorbehalten</span>
+      <span>Made with ✦ in Saarbrücken</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating call button -->
+<a class="fab" href="tel:+491607634655" aria-label="Jetzt anrufen">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+
+<script>
+  // Header background on scroll
+  const header = document.getElementById('siteHeader');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Reveal on scroll
+  const io = ('IntersectionObserver' in window)
+    ? new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 })
+    : null;
+  document.querySelectorAll('.reveal').forEach(el => {
+    if (io) io.observe(el); else el.classList.add('in');
+  });
+
+  // Highlight today's row in hours
+  (function highlightToday(){
+    const dayIdx = new Date().getDay(); // 0=Sun
+    const order = [6,0,1,2,3,4,5]; // dt index for Mon=0 → Sun=6
+    const list = document.getElementById('hoursList');
+    if (!list) return;
+    const dts = list.querySelectorAll('dt');
+    const dds = list.querySelectorAll('dd');
+    // Map JS day (Sun=0..Sat=6) to our list index (Mon=0..Sun=6)
+    const map = { 1:0, 2:1, 3:2, 4:3, 5:4, 6:5, 0:6 };
+    const idx = map[dayIdx];
+    if (dts[idx]) dts[idx].classList.add('today');
+    if (dds[idx]) dds[idx].classList.add('today');
+  })();
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile menu (simple anchor-based: scroll-spy not needed)
+  const menuBtn = document.getElementById('menuBtn');
+  const nav = document.querySelector('nav.links');
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', () => {
+      const open = nav.style.display === 'flex';
+      if (open) {
+        nav.style.display = '';
+        nav.style.position = '';
+        nav.style.flexDirection = '';
+        nav.style.background = '';
+        nav.style.padding = '';
+        nav.style.gap = '';
+      } else {
+        nav.style.display = 'flex';
+        nav.style.position = 'absolute';
+        nav.style.top = '78px';
+        nav.style.left = '20px';
+        nav.style.right = '20px';
+        nav.style.flexDirection = 'column';
+        nav.style.background = 'rgba(12,10,9,.96)';
+        nav.style.backdropFilter = 'blur(14px)';
+        nav.style.padding = '24px';
+        nav.style.gap = '18px';
+        nav.style.border = '1px solid rgba(212,166,74,.25)';
+        nav.style.borderRadius = '16px';
+      }
+    });
+    nav.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') menuBtn.click();
+    });
+  }
+</script>
+
+</body>
+</html>
