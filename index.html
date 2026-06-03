@@ -196,7 +196,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 22px 0;
+    padding: 16px 0;
   }
   .brand {
     display: inline-flex;
@@ -204,39 +204,40 @@
     gap: 12px;
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 20px;
-    letter-spacing: .14em;
+    font-size: 17px;
+    letter-spacing: .18em;
   }
   .brand .mark {
-    width: 38px; height: 38px;
+    width: 30px; height: 30px;
     display: grid; place-items: center;
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, var(--gold-3), var(--gold) 65%, var(--gold-2) 100%);
-    box-shadow: 0 6px 20px -6px rgba(201,88,103,.5);
+    box-shadow: 0 4px 12px -4px rgba(201,88,103,.4);
     color: #fff;
   }
+  .brand .mark svg { width: 16px; height: 16px; }
   .brand .name { display: inline-flex; flex-direction: column; line-height: 1; }
   .brand .name strong { font-weight: 600; letter-spacing: .22em; }
   .brand .name span {
     font-family: var(--font-sans);
     font-weight: 400;
-    letter-spacing: .35em;
-    font-size: 10px;
+    letter-spacing: .32em;
+    font-size: 9px;
     color: var(--muted);
     margin-top: 4px;
   }
   nav.links {
-    display: flex; gap: 36px;
-    font-size: 13px;
-    letter-spacing: .18em;
+    display: flex; gap: 28px;
+    font-size: 12px;
+    letter-spacing: .14em;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 400;
   }
   nav.links a {
     position: relative;
     padding: 6px 0;
     color: var(--ink);
-    opacity: .82;
+    opacity: .68;
     transition: color 200ms var(--ease-out), opacity 200ms var(--ease-out);
   }
   nav.links a::after {
@@ -489,62 +490,66 @@
     color: var(--muted);
   }
 
-  /* ---------- Services ---------- */
+  /* ---------- Services (price list) ---------- */
   .services { background: var(--bg); }
   .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    display: flex;
+    flex-direction: column;
+    max-width: 920px;
+    margin: 0 auto;
+    border-top: 1px solid var(--line);
   }
   .service {
     position: relative;
-    padding: 44px 36px;
-    background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
-    border: 1px solid var(--line);
-    border-radius: var(--r-lg);
-    transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "icon title price"
+      "icon desc  price";
+    column-gap: 28px;
+    align-items: center;
+    padding: 28px 8px;
+    border-bottom: 1px solid var(--line);
+    transition: background .25s ease;
   }
-  .service::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(70% 60% at 50% 0%, var(--gold-soft), transparent 65%);
-    opacity: 0;
-    transition: opacity .35s ease;
-    pointer-events: none;
-  }
-  .service:hover {
-    transform: translateY(-6px);
-    border-color: rgba(201,88,103,.45);
-    box-shadow: var(--shadow-glow);
-  }
-  .service:hover::before { opacity: 1; }
+  .service:hover { background: rgba(201,88,103,.04); }
   .service .icon {
-    width: 56px; height: 56px;
+    grid-area: icon;
+    width: 44px; height: 44px;
     border-radius: 50%;
     display: grid; place-items: center;
-    background: linear-gradient(135deg, rgba(201,88,103,.18), rgba(201,88,103,.04));
-    border: 1px solid rgba(201,88,103,.35);
+    background: linear-gradient(135deg, rgba(201,88,103,.14), rgba(201,88,103,.04));
+    border: 1px solid rgba(201,88,103,.28);
     color: var(--gold);
-    margin-bottom: 28px;
   }
-  .service h3 { color: var(--ink); }
+  .service .icon svg { width: 22px; height: 22px; }
+  .service h3 {
+    grid-area: title;
+    align-self: end;
+    color: var(--ink);
+    font-size: 22px;
+    line-height: 1.2;
+  }
   .service p {
-    margin-top: 14px;
-    font-size: 15px;
+    grid-area: desc;
+    align-self: start;
+    margin-top: 4px;
+    font-size: 14px;
     color: var(--muted);
-    line-height: 1.7;
+    line-height: 1.55;
+    max-width: 520px;
   }
   .service .price {
-    margin-top: 28px;
-    padding-top: 22px;
-    border-top: 1px solid var(--line);
-    display: flex; justify-content: space-between; align-items: baseline;
+    grid-area: price;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
     font-family: var(--font-serif);
+    white-space: nowrap;
   }
   .service .price .from {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--muted);
     letter-spacing: .2em;
     text-transform: uppercase;
@@ -553,6 +558,20 @@
     font-size: 24px;
     color: var(--gold);
     font-weight: 500;
+    line-height: 1;
+  }
+  @media (max-width: 560px) {
+    .service {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "title price"
+        "desc  desc";
+      column-gap: 16px;
+      padding: 24px 4px;
+    }
+    .service .icon { display: none; }
+    .service h3 { font-size: 19px; }
+    .service .price .amount { font-size: 20px; }
   }
 
   /* ---------- Experience strip ---------- */
@@ -1038,10 +1057,6 @@
       </nav>
 
       <div class="nav-cta">
-        <a class="btn btn-ghost" href="tel:+491607634655">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Anrufen
-        </a>
         <a class="btn btn-gold" href="#booking">Termin buchen</a>
         <button class="menu-toggle" aria-label="Menü öffnen" id="menuBtn">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -1581,7 +1596,7 @@
       } else {
         nav.style.display = 'flex';
         nav.style.position = 'absolute';
-        nav.style.top = '78px';
+        nav.style.top = '66px';
         nav.style.left = '20px';
         nav.style.right = '20px';
         nav.style.flexDirection = 'column';
