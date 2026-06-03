@@ -7,6 +7,16 @@
 <meta name="description" content="Oufa Hairstyling in Saarbrücken — modernes Friseur-Atelier mit orientalisch inspiriertem Stil. Schnitt, Farbe, Styling. Termin: 0160 76 34 655." />
 <meta name="theme-color" content="#fbf5ef" />
 
+<script>
+  // Always land on the hero — strip any cached hash before the browser scrolls
+  (function(){
+    try {
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    } catch(e) {}
+  })();
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -949,6 +959,63 @@
     margin-top: 2px;
   }
 
+  /* ---------- Impressum ---------- */
+  .impressum {
+    background: var(--bg-2);
+    padding: 96px 0;
+  }
+  .impressum-card {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    padding: 56px 52px;
+    box-shadow: var(--shadow-sm);
+  }
+  .impressum h2 {
+    margin-top: 14px;
+    font-size: clamp(28px, 3vw, 40px);
+  }
+  .impressum h3 {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 36px 0 10px;
+    font-weight: 600;
+  }
+  .impressum h3:first-of-type { margin-top: 32px; }
+  .impressum p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+  .impressum p a {
+    color: var(--ink);
+    border-bottom: 1px solid rgba(201,88,103,.32);
+    transition: color 200ms var(--ease-out), border-color 200ms var(--ease-out);
+  }
+  .impressum p a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+  .impressum .placeholder {
+    color: var(--gold-2);
+    background: rgba(201,88,103,.08);
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    letter-spacing: .03em;
+  }
+  @media (max-width: 560px) {
+    .impressum { padding: 72px 0; }
+    .impressum-card { padding: 40px 24px; }
+    .impressum p { font-size: 14px; }
+  }
+
   /* ---------- Footer ---------- */
   footer {
     background: #08070700;
@@ -1475,6 +1542,92 @@
   </div>
 </section>
 
+<!-- ===== IMPRESSUM ===== -->
+<section class="impressum" id="impressum">
+  <div class="container">
+    <div class="impressum-card reveal">
+      <span class="eyebrow">Rechtliches</span>
+      <h2>Impressum</h2>
+
+      <h3>Angaben gemäß § 5 DDG</h3>
+      <p>
+        Oufa Hairstyling<br />
+        Inhaberin: Oufa Yousef<br />
+        Dudweilerstraße 2A<br />
+        66111 Saarbrücken<br />
+        Deutschland
+      </p>
+
+      <h3>Kontakt</h3>
+      <p>
+        Telefon: <a href="tel:+491607634655">0160 76 34 655</a><br />
+        E-Mail: <span class="placeholder">E-Mail-Adresse bitte ergänzen</span>
+      </p>
+
+      <h3>Umsatzsteuer-Identifikationsnummer</h3>
+      <p>
+        Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+        <span class="placeholder">USt-IdNr. bitte ergänzen</span>
+      </p>
+
+      <h3>Berufsrechtliche Angaben</h3>
+      <p>
+        Berufsbezeichnung: Friseurin<br />
+        Verliehen in: Bundesrepublik Deutschland<br />
+        Zuständige Kammer: Handwerkskammer des Saarlandes,
+        Hohenzollernstraße 47–49, 66117 Saarbrücken<br />
+        Maßgebliche berufsrechtliche Regelungen einsehbar unter
+        <a href="https://www.gesetze-im-internet.de/" target="_blank" rel="noopener noreferrer">gesetze-im-internet.de</a>.
+      </p>
+
+      <h3>Redaktionell verantwortlich gemäß § 18 Abs. 2 MStV</h3>
+      <p>Oufa Yousef, Anschrift wie oben.</p>
+
+      <h3>Verbraucherstreitbeilegung</h3>
+      <p>
+        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren
+        vor einer Verbraucherschlichtungsstelle teilzunehmen.
+      </p>
+
+      <h3>Haftung für Inhalte</h3>
+      <p>
+        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte
+        auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach
+        §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht
+        verpflichtet, übermittelte oder gespeicherte fremde Informationen zu
+        überwachen oder nach Umständen zu forschen, die auf eine
+        rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung
+        oder Sperrung der Nutzung von Informationen nach den allgemeinen
+        Gesetzen bleiben hiervon unberührt.
+      </p>
+
+      <h3>Haftung für Links</h3>
+      <p>
+        Unser Angebot enthält Links zu externen Websites Dritter, auf deren
+        Inhalte wir keinen Einfluss haben. Deshalb können wir für diese
+        fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
+        verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber
+        der Seiten verantwortlich.
+      </p>
+
+      <h3>Urheberrecht</h3>
+      <p>
+        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
+        diesen Seiten unterliegen dem deutschen Urheberrecht.
+        Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
+        Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der
+        schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+      </p>
+
+      <h3>Bildnachweise</h3>
+      <p>
+        Sämtliche auf dieser Website verwendeten Fotos stammen aus dem
+        eigenen Atelier von Oufa Hairstyling, sofern nicht anders gekennzeichnet.
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="container">
@@ -1504,6 +1657,7 @@
           <li><a href="#services">Leistungen</a></li>
           <li><a href="#testimonials">Erlebnisse</a></li>
           <li><a href="#contact">Kontakt</a></li>
+          <li><a href="#impressum">Impressum</a></li>
         </ul>
       </div>
 
@@ -1520,7 +1674,7 @@
 
     <div class="foot-bottom">
       <span>© <span id="year"></span> Oufa Hairstyling · Alle Rechte vorbehalten</span>
-      <span>Made with ✦ in Saarbrücken</span>
+      <span><a href="#impressum">Impressum</a> · Made with ✦ in Saarbrücken</span>
     </div>
   </div>
 </footer>
@@ -1531,6 +1685,9 @@
 </a>
 
 <script>
+  // Ensure we always start at the hero (in case the early head script raced the browser)
+  window.scrollTo(0, 0);
+
   // Header background on scroll
   const header = document.getElementById('siteHeader');
   const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
