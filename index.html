@@ -800,6 +800,58 @@
   .tile.t5 { grid-column: span 2; grid-row: span 1; }
   .tile.t6 { grid-column: span 1; grid-row: span 1; }
 
+  /* Expandable gallery section */
+  .gallery-more {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    transition: max-height 800ms var(--ease-in-out), opacity 500ms ease, margin-top 500ms ease;
+  }
+  .gallery-more.open {
+    max-height: 4000px;
+    opacity: 1;
+    margin-top: 16px;
+  }
+  .gallery-more-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 280px;
+    gap: 16px;
+  }
+  .gallery-more .tile {
+    opacity: 0;
+    transition: opacity .7s var(--ease-out), transform .35s ease, border-color .35s ease;
+  }
+  .gallery-more.open .tile { opacity: 1; }
+  .gallery-more.open .tile:nth-child(1) { transition-delay: 80ms; }
+  .gallery-more.open .tile:nth-child(2) { transition-delay: 160ms; }
+  .gallery-more.open .tile:nth-child(3) { transition-delay: 240ms; }
+  .gallery-more.open .tile:nth-child(4) { transition-delay: 320ms; }
+  .gallery-more.open .tile:nth-child(5) { transition-delay: 400ms; }
+  .gallery-more.open .tile:nth-child(6) { transition-delay: 480ms; }
+  .gallery-more.open .tile:nth-child(7) { transition-delay: 560ms; }
+  .gallery-more.open .tile:nth-child(8) { transition-delay: 640ms; }
+  .gallery-more.open .tile:nth-child(9) { transition-delay: 720ms; }
+
+  .gallery-toggle {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .gallery-toggle .btn .chevron {
+    transition: transform 350ms var(--ease-out);
+  }
+  .gallery-toggle .btn.open .chevron { transform: rotate(180deg); }
+
+  @media (max-width: 980px) {
+    .gallery-more-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 240px; }
+  }
+  @media (max-width: 560px) {
+    .gallery-more-grid { grid-template-columns: 1fr; grid-auto-rows: 280px; }
+    .gallery-more.open { max-height: 5000px; }
+  }
+
   /* ---------- Booking CTA ---------- */
   .booking {
     position: relative;
@@ -1476,6 +1528,27 @@
       <div class="tile t5 reveal" style="background: url('https://i.ibb.co/WWqgmkRS/Bild-03-06-26-um-17-59.png') center/cover no-repeat #0c0a09;"><span class="label"><small>Style</small>Soft Waves</span></div>
       <div class="tile t6 reveal" style="background: url('https://i.ibb.co/kVxS32QM/Bild-03-06-26-um-17-59-1.png') center/cover no-repeat #0c0a09;"><span class="label"><small>Look</small>Statement Style</span></div>
     </div>
+
+    <div class="gallery-more" id="galleryMore" aria-hidden="true">
+      <div class="gallery-more-grid">
+        <div class="tile" style="background: url('https://i.ibb.co/rfbMLyv3/5-D5110-D7-8-DFA-4-D84-BB23-509-C89431-F52.jpg') center/cover no-repeat #0c0a09;"></div>
+        <div class="tile" style="background: url('https://i.ibb.co/7Nv8q38v/IMG-0630.avif') center/cover no-repeat #0c0a09;"></div>
+        <div class="tile" style="background: url('https://i.ibb.co/jk9XkpBn/IMG-1092.avif') center/cover no-repeat #0c0a09;"></div>
+        <div class="tile" style="background: url('https://i.ibb.co/p6PD5Cfd/IMG-1474.avif') center/cover no-repeat #0c0a09;"></div>
+        <div class="tile" style="background: url('https://i.ibb.co/mrKyZKgW/IMG-3378.avif') center/cover no-repeat #0c0a09;"></div>
+        <div class="tile" style="background: url('https://i.ibb.co/twVrJNFB/IMG-3405.jpg') center/cover no-repeat #0c0a09;"></div>
+        <div class="tile" style="background: url('https://i.ibb.co/v4b8JxnB/IMG-5208.png') center/cover no-repeat #0c0a09;"></div>
+        <div class="tile" style="background: url('https://i.ibb.co/nNTzgcH8/IMG-6949.avif') center/cover no-repeat #0c0a09;"></div>
+        <div class="tile" style="background: url('https://i.ibb.co/Q7tTdHzM/IMG-7488.png') center/cover no-repeat #0c0a09;"></div>
+      </div>
+    </div>
+
+    <div class="gallery-toggle">
+      <button class="btn btn-ghost" id="galleryToggleBtn" aria-expanded="false" aria-controls="galleryMore">
+        <span class="toggle-text">Mehr Frisuren anzeigen</span>
+        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
   </div>
 </section>
 
@@ -1790,6 +1863,20 @@
   }, { threshold: 0.4 }) : null;
   if (countObserver) {
     document.querySelectorAll('.stat .v, .reviews-summary .big').forEach(el => countObserver.observe(el));
+  }
+
+  // Expandable gallery toggle
+  const galleryBtn = document.getElementById('galleryToggleBtn');
+  const galleryMore = document.getElementById('galleryMore');
+  if (galleryBtn && galleryMore) {
+    galleryBtn.addEventListener('click', () => {
+      const open = galleryMore.classList.toggle('open');
+      galleryBtn.classList.toggle('open', open);
+      galleryBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      galleryMore.setAttribute('aria-hidden', open ? 'false' : 'true');
+      const text = galleryBtn.querySelector('.toggle-text');
+      if (text) text.textContent = open ? 'Weniger anzeigen' : 'Mehr Frisuren anzeigen';
+    });
   }
 
   // Highlight today's row in hours
