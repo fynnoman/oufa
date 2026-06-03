@@ -429,10 +429,12 @@
     background-color: #0c0a09;
     box-shadow: var(--shadow-md);
     border: 1px solid rgba(201,88,103,.28);
+    transform: translateY(var(--py, 0px));
+    will-change: transform;
     transition: transform .4s var(--ease-out), box-shadow .4s var(--ease-out);
   }
   .hero-img:hover {
-    transform: translateY(-4px);
+    transform: translateY(calc(var(--py, 0px) - 6px));
     box-shadow: 0 30px 70px -25px rgba(92,42,58,.32);
   }
   .hero-img-2 { margin-top: 36px; }
@@ -1089,12 +1091,44 @@
   /* ---------- Reveal animations ---------- */
   .reveal {
     opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
+    transform: translateY(18px);
+    transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
   }
   .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* Staggered cascade when multiple children reveal at once */
+  .services-grid > .reveal:nth-child(1) { transition-delay: 60ms; }
+  .services-grid > .reveal:nth-child(2) { transition-delay: 160ms; }
+  .services-grid > .reveal:nth-child(3) { transition-delay: 260ms; }
+  .services-grid > .reveal:nth-child(4) { transition-delay: 360ms; }
+
+  .reviews-grid > .reveal:nth-child(1) { transition-delay: 80ms; }
+  .reviews-grid > .reveal:nth-child(2) { transition-delay: 200ms; }
+  .reviews-grid > .reveal:nth-child(3) { transition-delay: 320ms; }
+
+  .gallery-grid > .reveal:nth-child(1) { transition-delay: 60ms; }
+  .gallery-grid > .reveal:nth-child(2) { transition-delay: 140ms; }
+  .gallery-grid > .reveal:nth-child(3) { transition-delay: 220ms; }
+  .gallery-grid > .reveal:nth-child(4) { transition-delay: 300ms; }
+  .gallery-grid > .reveal:nth-child(5) { transition-delay: 380ms; }
+  .gallery-grid > .reveal:nth-child(6) { transition-delay: 460ms; }
+
+  .exp-grid > .reveal:nth-child(1) { transition-delay: 60ms; }
+  .exp-grid > .reveal:nth-child(2) { transition-delay: 180ms; }
+  .exp-grid > .reveal:nth-child(3) { transition-delay: 300ms; }
+  .exp-grid > .reveal:nth-child(4) { transition-delay: 420ms; }
+
+  /* Gallery tiles get a soft scale-in for a more luxurious feel */
+  .gallery-grid > .reveal { transform: translateY(24px) scale(.96); }
+  .gallery-grid > .reveal.in { transform: translateY(0) scale(1); }
+
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
+    .services-grid > .reveal,
+    .reviews-grid > .reveal,
+    .gallery-grid > .reveal,
+    .exp-grid > .reveal { transition-delay: 0s !important; }
+    .gallery-grid > .reveal { transform: none; }
     .fab::after { animation: none; }
     html { scroll-behavior: auto; }
   }
@@ -1705,6 +1739,58 @@
   document.querySelectorAll('.reveal').forEach(el => {
     if (io) io.observe(el); else el.classList.add('in');
   });
+
+  // Respect user motion preferences
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Subtle parallax on the hero diptych — only while the hero is in view
+  const heroImg1 = document.querySelector('.hero-img-1');
+  const heroImg2 = document.querySelector('.hero-img-2');
+  if (!prefersReducedMotion && (heroImg1 || heroImg2)) {
+    let ticking = false;
+    const applyParallax = () => {
+      const y = window.scrollY;
+      if (y < 1400) {
+        if (heroImg1) heroImg1.style.setProperty('--py', `${y * -0.05}px`);
+        if (heroImg2) heroImg2.style.setProperty('--py', `${y * -0.085}px`);
+      }
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(applyParallax); ticking = true; }
+    }, { passive: true });
+  }
+
+  // Count-up animation for stat values (56+, 4,9, 100%, review 4,9)
+  const countObserver = ('IntersectionObserver' in window) ? new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      countObserver.unobserve(el);
+      if (el.dataset.counted) return;
+      el.dataset.counted = '1';
+      if (prefersReducedMotion) return;
+      const text = el.textContent.trim();
+      const m = text.match(/^(\d+(?:[,.]\d+)?)(.*)$/);
+      if (!m) return;
+      const target = parseFloat(m[1].replace(',', '.'));
+      const suffix = m[2];
+      const hasDecimal = m[1].includes(',');
+      const duration = 1400;
+      const start = performance.now();
+      const tick = (now) => {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const cur = target * eased;
+        el.textContent = (hasDecimal ? cur.toFixed(1).replace('.', ',') : Math.round(cur).toString()) + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.4 }) : null;
+  if (countObserver) {
+    document.querySelectorAll('.stat .v, .reviews-summary .big').forEach(el => countObserver.observe(el));
+  }
 
   // Highlight today's row in hours
   (function highlightToday(){
