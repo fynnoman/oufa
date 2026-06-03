@@ -495,83 +495,60 @@
   .services-grid {
     display: flex;
     flex-direction: column;
-    max-width: 920px;
+    gap: 64px;
+    max-width: 760px;
     margin: 0 auto;
-    border-top: 1px solid var(--line);
   }
-  .service {
-    position: relative;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-areas:
-      "icon title price"
-      "icon desc  price";
-    column-gap: 28px;
-    align-items: center;
-    padding: 28px 8px;
-    border-bottom: 1px solid var(--line);
-    transition: background .25s ease;
-  }
-  .service:hover { background: rgba(201,88,103,.04); }
-  .service .icon {
-    grid-area: icon;
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    display: grid; place-items: center;
-    background: linear-gradient(135deg, rgba(201,88,103,.14), rgba(201,88,103,.04));
-    border: 1px solid rgba(201,88,103,.28);
-    color: var(--gold);
-  }
-  .service .icon svg { width: 22px; height: 22px; }
-  .service h3 {
-    grid-area: title;
-    align-self: end;
-    color: var(--ink);
-    font-size: 22px;
-    line-height: 1.2;
-  }
-  .service p {
-    grid-area: desc;
-    align-self: start;
-    margin-top: 4px;
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.55;
-    max-width: 520px;
-  }
-  .service .price {
-    grid-area: price;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 2px;
+  .service-group .group-title {
     font-family: var(--font-serif);
-    white-space: nowrap;
+    font-weight: 500;
+    font-size: 28px;
+    color: var(--ink);
+    letter-spacing: .01em;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(201,88,103,.32);
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
   }
-  .service .price .from {
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: .2em;
-    text-transform: uppercase;
+  .service-group .group-title::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
   }
-  .service .price .amount {
-    font-size: 24px;
+  .price-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .price-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-serif);
+    font-size: 18px;
+    color: var(--ink);
+    transition: background .2s ease;
+  }
+  .price-list li:hover { background: rgba(201,88,103,.04); }
+  .price-list li:last-child { border-bottom: 0; }
+  .price-list .price {
     color: var(--gold);
     font-weight: 500;
-    line-height: 1;
+    white-space: nowrap;
+    font-size: 17px;
   }
   @media (max-width: 560px) {
-    .service {
-      grid-template-columns: 1fr auto;
-      grid-template-areas:
-        "title price"
-        "desc  desc";
-      column-gap: 16px;
-      padding: 24px 4px;
-    }
-    .service .icon { display: none; }
-    .service h3 { font-size: 19px; }
-    .service .price .amount { font-size: 20px; }
+    .services-grid { gap: 48px; }
+    .service-group .group-title { font-size: 22px; }
+    .price-list li { font-size: 16px; padding: 12px 2px; }
+    .price-list .price { font-size: 15px; }
   }
 
   /* ---------- Experience strip ---------- */
@@ -1168,104 +1145,50 @@
     </div>
 
     <div class="services-grid">
-      <div class="service reveal">
-        <div class="icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="6" cy="6" r="3"/>
-            <circle cx="6" cy="18" r="3"/>
-            <line x1="20" y1="4" x2="8.12" y2="15.88"/>
-            <line x1="14.47" y1="14.48" x2="20" y2="20"/>
-            <line x1="8.12" y1="8.12" x2="12" y2="12"/>
-          </svg>
-        </div>
-        <h3>Schnitt & Form</h3>
-        <p>Präziser Damen- und Herrenschnitt, abgestimmt auf Gesicht, Haarstruktur und Alltag. Inklusive Beratung und Pflege-Finish.</p>
-        <div class="price">
-          <span class="from">ab</span>
-          <span class="amount">35 €</span>
-        </div>
+      <div class="service-group reveal">
+        <h3 class="group-title">Damen Haarschnitt</h3>
+        <ul class="price-list">
+          <li><span class="name">Kurze Haare</span><span class="price">ab 30,00 €</span></li>
+          <li><span class="name">Lange Haare</span><span class="price">ab 40,00 €</span></li>
+          <li><span class="name">Schüler & Student</span><span class="price">ab 30,00 €</span></li>
+          <li><span class="name">Waschen & Föhnen</span><span class="price">ab 20,00 €</span></li>
+          <li><span class="name">Haarpflege</span><span class="price">8,00 €</span></li>
+        </ul>
       </div>
 
-      <div class="service reveal">
-        <div class="icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3 C 8 8, 8 12, 12 17 C 16 12, 16 8, 12 3 Z"/>
-            <path d="M12 17 C 12 17, 8 19, 6 22 L 18 22 C 16 19, 12 17, 12 17 Z"/>
-          </svg>
-        </div>
-        <h3>Farbe & Coloration</h3>
-        <p>Von dezenten Glossings bis zu warmen Balayage-Tönen — natürliche Farbverläufe, die wirklich halten und Ihrem Teint schmeicheln.</p>
-        <div class="price">
-          <span class="from">ab</span>
-          <span class="amount">65 €</span>
-        </div>
+      <div class="service-group reveal">
+        <h3 class="group-title">Haare färben</h3>
+        <ul class="price-list">
+          <li><span class="name">Komplett färben</span><span class="price">ab 60,00 €</span></li>
+          <li><span class="name">Ansatz Farbe</span><span class="price">ab 40,00 €</span></li>
+          <li><span class="name">Dauerwelle</span><span class="price">ab 40,00 €</span></li>
+          <li><span class="name">Augenbrauen</span><span class="price">8,00 €</span></li>
+          <li><span class="name">Augenbrauen färben</span><span class="price">8,00 €</span></li>
+          <li><span class="name">Wimpern färben</span><span class="price">8,00 €</span></li>
+          <li><span class="name">Strähnen kurze Haare</span><span class="price">ab 60,00 €</span></li>
+          <li><span class="name">Strähnen lange Haare</span><span class="price">ab 110,00 €</span></li>
+          <li><span class="name">Tönung</span><span class="price">ab 40,00 €</span></li>
+        </ul>
       </div>
 
-      <div class="service reveal">
-        <div class="icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 12 C 7 6, 17 6, 21 12"/>
-            <path d="M3 16 C 7 12, 17 12, 21 16"/>
-            <circle cx="12" cy="3.5" r="1.2"/>
-          </svg>
-        </div>
-        <h3>Styling & Event</h3>
-        <p>Brautstyling, Anlass-Frisuren und Foto-Looks. Perfekt sitzendes Styling, das vom ersten Foto bis zum letzten Tanz hält.</p>
-        <div class="price">
-          <span class="from">ab</span>
-          <span class="amount">55 €</span>
-        </div>
+      <div class="service-group reveal">
+        <h3 class="group-title">Braut & Styling</h3>
+        <ul class="price-list">
+          <li><span class="name">Brautfrisuren</span><span class="price">175,00 €</span></li>
+          <li><span class="name">Make-up</span><span class="price">100,00 €</span></li>
+          <li><span class="name">Hochsteckfrisuren</span><span class="price">75,00 €</span></li>
+          <li><span class="name">Make Up</span><span class="price">75,00 €</span></li>
+        </ul>
       </div>
 
-      <div class="service reveal">
-        <div class="icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2 L13.5 8.5 L20 10 L13.5 11.5 L12 18 L10.5 11.5 L4 10 L10.5 8.5 Z"/>
-            <circle cx="19" cy="19" r="2"/>
-            <circle cx="5" cy="20" r="1.5"/>
-          </svg>
-        </div>
-        <h3>Glanz-Behandlung</h3>
-        <p>Intensive Pflegerituale mit Argan-, Keratin- oder Botox-Komplex — für seidigen Glanz und spürbar geschmeidige Längen.</p>
-        <div class="price">
-          <span class="from">ab</span>
-          <span class="amount">45 €</span>
-        </div>
-      </div>
-
-      <div class="service reveal">
-        <div class="icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7 4 L17 4 L15 12 L9 12 Z"/>
-            <path d="M9 12 L9 20"/>
-            <path d="M15 12 L15 20"/>
-            <path d="M6 20 L18 20"/>
-          </svg>
-        </div>
-        <h3>Hochzeit & Henna</h3>
-        <p>Komplettpaket für Bräute: Probetermin, Hairstyling am großen Tag, Henna-Inspiration und ein ruhiger Rückzugsort vor dem Fest.</p>
-        <div class="price">
-          <span class="from">Paket</span>
-          <span class="amount">auf Anfrage</span>
-        </div>
-      </div>
-
-      <div class="service reveal">
-        <div class="icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="9" cy="13" r="3"/>
-            <circle cx="15" cy="13" r="3"/>
-            <path d="M9 6 L9 10"/>
-            <path d="M15 6 L15 10"/>
-            <path d="M9 16 C 10 19, 14 19, 15 16"/>
-          </svg>
-        </div>
-        <h3>Kinder & Familie</h3>
-        <p>Geduldige Schnitte für die Kleinsten, abgestimmte Frisuren für Mama, Papa und Geschwister — entspannt an einem Nachmittag.</p>
-        <div class="price">
-          <span class="from">ab</span>
-          <span class="amount">18 €</span>
-        </div>
+      <div class="service-group reveal">
+        <h3 class="group-title">Herren</h3>
+        <ul class="price-list">
+          <li><span class="name">Haarschnitt</span><span class="price">20,00 €</span></li>
+          <li><span class="name">Bart</span><span class="price">12,00 €</span></li>
+          <li><span class="name">Augenbrauen</span><span class="price">8,00 €</span></li>
+          <li><span class="name">Schüler & Student</span><span class="price">17,00 €</span></li>
+        </ul>
       </div>
     </div>
 
