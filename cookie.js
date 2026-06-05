@@ -18,7 +18,6 @@
   function inject() {
     if (document.getElementById('oufa-cookie-banner')) return;
 
-    // Style block — scoped via #oufa-cookie-banner
     var style = document.createElement('style');
     style.textContent = '\
       #oufa-cookie-banner {\
@@ -29,12 +28,12 @@
         margin: 0 auto;\
         padding: 22px 26px;\
         border-radius: 18px;\
-        background: rgba(12,10,9,.94);\
+        background: rgba(253,248,243,.96);\
         backdrop-filter: blur(16px) saturate(140%);\
         -webkit-backdrop-filter: blur(16px) saturate(140%);\
-        border: 1px solid rgba(212,166,74,.32);\
-        box-shadow: 0 30px 80px -20px rgba(0,0,0,.75), 0 0 0 1px rgba(212,166,74,.08), inset 0 1px 0 rgba(255,255,255,.04);\
-        color: #f6efe3;\
+        border: 1px solid rgba(201,88,103,.28);\
+        box-shadow: 0 24px 60px -20px rgba(92,42,58,.30), 0 0 0 1px rgba(201,88,103,.08), inset 0 1px 0 rgba(255,255,255,.6);\
+        color: #3d1f24;\
         font-family: "Montserrat", "Inter", system-ui, -apple-system, sans-serif;\
         display: grid;\
         grid-template-columns: 1fr auto;\
@@ -56,37 +55,37 @@
       #oufa-cookie-banner::before {\
         content: "";\
         position: absolute;\
-        left: 26px; top: 22px;\
+        left: 26px; top: 24px;\
         width: 6px; height: 6px;\
         border-radius: 50%;\
-        background: #d4a64a;\
-        box-shadow: 0 0 14px rgba(212,166,74,.6);\
-        opacity: .85;\
+        background: #c95867;\
+        box-shadow: 0 0 14px rgba(201,88,103,.55);\
+        opacity: .9;\
       }\
       #oufa-cookie-banner .ocb-content { padding-left: 22px; }\
       #oufa-cookie-banner .ocb-title {\
         font-family: "Cormorant", "Playfair Display", Georgia, serif;\
-        font-size: 18px;\
+        font-size: 19px;\
         font-weight: 500;\
-        color: #d4a64a;\
-        letter-spacing: .02em;\
+        color: #c95867;\
+        letter-spacing: .015em;\
         margin: 0 0 4px;\
       }\
       #oufa-cookie-banner .ocb-text {\
         font-size: 13px;\
         line-height: 1.6;\
-        color: #b9ad97;\
+        color: #8a6770;\
         margin: 0;\
       }\
       #oufa-cookie-banner .ocb-text a {\
-        color: #f3d27b;\
+        color: #c95867;\
         text-decoration: none;\
-        border-bottom: 1px solid rgba(212,166,74,.35);\
+        border-bottom: 1px solid rgba(201,88,103,.4);\
         transition: border-color .2s ease, color .2s ease;\
       }\
       #oufa-cookie-banner .ocb-text a:hover {\
-        color: #d4a64a;\
-        border-bottom-color: #d4a64a;\
+        color: #a83f4f;\
+        border-bottom-color: #a83f4f;\
       }\
       #oufa-cookie-banner .ocb-actions {\
         display: flex;\
@@ -99,7 +98,7 @@
         font-weight: 600;\
         letter-spacing: .12em;\
         text-transform: uppercase;\
-        padding: 12px 20px;\
+        padding: 12px 22px;\
         border-radius: 999px;\
         border: 0;\
         cursor: pointer;\
@@ -107,22 +106,23 @@
         white-space: nowrap;\
       }\
       #oufa-cookie-banner .ocb-btn-gold {\
-        background: linear-gradient(135deg, #f3d27b, #d4a64a 60%, #b9892f);\
-        color: #0c0a09;\
-        box-shadow: 0 8px 22px -8px rgba(212,166,74,.55), inset 0 1px 0 rgba(255,255,255,.35);\
+        background: linear-gradient(135deg, #e89aa6, #c95867 60%, #a83f4f);\
+        color: #fff;\
+        box-shadow: 0 8px 22px -8px rgba(201,88,103,.55), inset 0 1px 0 rgba(255,255,255,.25);\
       }\
       #oufa-cookie-banner .ocb-btn-gold:hover {\
         transform: translateY(-1px);\
-        box-shadow: 0 14px 28px -8px rgba(212,166,74,.65);\
+        box-shadow: 0 14px 28px -8px rgba(201,88,103,.65);\
       }\
       #oufa-cookie-banner .ocb-btn-ghost {\
-        background: transparent;\
-        color: #b9ad97;\
-        border: 1px solid rgba(246,239,227,.22);\
+        background: #fff;\
+        color: #8a6770;\
+        border: 1px solid rgba(92,42,58,.16);\
       }\
       #oufa-cookie-banner .ocb-btn-ghost:hover {\
-        border-color: #d4a64a;\
-        color: #d4a64a;\
+        border-color: #c95867;\
+        color: #c95867;\
+        background: rgba(201,88,103,.04);\
       }\
       @media (max-width: 720px) {\
         #oufa-cookie-banner {\
@@ -142,7 +142,6 @@
       }';
     document.head.appendChild(style);
 
-    // Banner markup
     var banner = document.createElement('div');
     banner.id = 'oufa-cookie-banner';
     banner.className = 'is-entering';
@@ -168,7 +167,6 @@
       setConsent(btn.getAttribute('data-consent'));
     });
 
-    // Animate in next tick
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         banner.classList.remove('is-entering');
@@ -189,7 +187,6 @@
     }
   }
 
-  // Public API — useful for a "manage cookies" link later
   window.oufaCookies = {
     open: function () {
       try { localStorage.removeItem(KEY); } catch (_) {}
