@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Impressum — Oufa Hairstyling Saarbrücken</title>
+<meta name="description" content="Impressum von Oufa Hairstyling, Friseursalon in Saarbrücken. Inhaberin, Anschrift, Kontakt und berufsrechtliche Angaben." />
+<meta name="theme-color" content="#0c0a09" />
+<meta name="robots" content="index, follow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg:         #0c0a09;
+    --bg-2:       #14110f;
+    --surface:    #1c1917;
+    --line:       #2a2420;
+    --cream:      #f6efe3;
+    --cream-2:    #efe6d3;
+    --muted:      #b9ad97;
+    --ink:        #0c0a09;
+    --gold:       #d4a64a;
+    --gold-2:     #b9892f;
+    --gold-3:     #f3d27b;
+    --gold-soft:  rgba(212, 166, 74, 0.18);
+    --font-display: "Cinzel", "Cormorant", serif;
+    --font-serif:   "Cormorant", "Playfair Display", Georgia, serif;
+    --font-sans:    "Montserrat", "Inter", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--cream);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  img, svg { display: block; max-width: 100%; }
+  ::selection { background: var(--gold); color: var(--ink); }
+
+  .container {
+    width: 100%;
+    max-width: 1240px;
+    padding: 0 24px;
+    margin: 0 auto;
+  }
+
+  .gold-text {
+    background: linear-gradient(135deg, var(--gold-3) 0%, var(--gold) 45%, var(--gold-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::before, .eyebrow::after {
+    content: "";
+    width: 28px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .eyebrow.left::before { display: none; }
+
+  /* ---------- Header ---------- */
+  header.site {
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    z-index: 60;
+    background: rgba(12,10,9,.78);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom: 1px solid rgba(212,166,74,.18);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 0;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: .14em;
+  }
+  .brand .mark {
+    width: 38px; height: 38px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--gold-3), var(--gold-2) 70%, #6b4d12 100%);
+    box-shadow: 0 6px 20px -6px rgba(212,166,74,.55);
+    color: var(--ink);
+  }
+  .brand .name strong { display: block; font-weight: 700; line-height: 1; }
+  .brand .name span {
+    font-size: 10px;
+    letter-spacing: .35em;
+    color: var(--muted);
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 12px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(246,239,227,.18);
+    transition: color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .back-link:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+    background: rgba(212,166,74,.06);
+  }
+  .back-link svg { transition: transform .3s cubic-bezier(.22,1,.36,1); }
+  .back-link:hover svg { transform: translateX(-3px); }
+
+  /* ---------- Page hero ---------- */
+  .page-hero {
+    padding: 140px 0 60px;
+    position: relative;
+    background:
+      radial-gradient(60% 80% at 50% 0%, rgba(212,166,74,.10), transparent 60%),
+      var(--bg);
+    text-align: center;
+  }
+  .page-hero::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,166,74,.32), transparent);
+  }
+  .page-hero h1 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: clamp(42px, 5.5vw, 76px);
+    line-height: 1.06;
+    margin: 22px 0 18px;
+    letter-spacing: -0.01em;
+  }
+  .page-hero p.lead {
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+
+  /* ---------- Legal content ---------- */
+  .legal {
+    background: var(--bg-2);
+    padding: 80px 0 120px;
+  }
+  .legal-card {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 56px 52px;
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,.55);
+    position: relative;
+  }
+  .legal-card::before {
+    content: "";
+    position: absolute;
+    top: -1px; left: 32px; right: 32px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,166,74,.4), transparent);
+  }
+  .legal-card h3 {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: .26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 40px 0 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .legal-card h3::before {
+    content: "";
+    width: 22px; height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .legal-card h3:first-of-type { margin-top: 12px; }
+  .legal-card p {
+    font-size: 15px;
+    line-height: 1.78;
+    color: var(--cream-2);
+    margin: 0 0 6px;
+  }
+  .legal-card p a {
+    color: var(--gold-3);
+    border-bottom: 1px solid rgba(212,166,74,.35);
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .legal-card p a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+  .legal-card .placeholder {
+    color: var(--gold-2);
+    background: rgba(212,166,74,.08);
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    letter-spacing: .03em;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    padding: 48px 0 32px;
+  }
+  .foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .foot p, .foot a {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .foot .legal-links {
+    display: flex;
+    gap: 28px;
+  }
+  .foot .legal-links a {
+    position: relative;
+    transition: color .25s ease;
+  }
+  .foot .legal-links a::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -4px;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s cubic-bezier(.22,1,.36,1);
+  }
+  .foot .legal-links a:hover { color: var(--gold); }
+  .foot .legal-links a:hover::after { transform: scaleX(1); }
+
+  @media (max-width: 720px) {
+    .page-hero { padding: 110px 0 50px; }
+    .legal { padding: 60px 0 80px; }
+    .legal-card { padding: 40px 24px; border-radius: 18px; }
+    .legal-card p { font-size: 14px; }
+    .legal-card h3 { font-size: 10px; letter-spacing: .22em; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <div class="nav">
+      <a href="/" class="brand" aria-label="Oufa Hairstyling — zurück zur Startseite">
+        <span class="mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 L20 12 L12 22 L4 12 Z"/>
+            <path d="M12 6 L17 12 L12 18 L7 12 Z"/>
+          </svg>
+        </span>
+        <span class="name">
+          <strong>OUFA</strong>
+          <span>HAIRSTYLING</span>
+        </span>
+      </a>
+      <a href="/" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        Zur Startseite
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Rechtliches</span>
+    <h1>Impressum</h1>
+    <p class="lead">Angaben gemäß § 5 DDG sowie weitere gesetzlich vorgeschriebene Informationen über Oufa Hairstyling.</p>
+  </div>
+</section>
+
+<section class="legal">
+  <div class="container">
+    <div class="legal-card">
+
+      <h3>Angaben gemäß § 5 DDG</h3>
+      <p>
+        Oufa Hairstyling<br />
+        Inhaberin: Oufa Yousef<br />
+        Dudweilerstraße 2A<br />
+        66111 Saarbrücken<br />
+        Deutschland
+      </p>
+
+      <h3>Kontakt</h3>
+      <p>
+        Telefon: <a href="tel:+491607634655">0160 76 34 655</a><br />
+        E-Mail: <span class="placeholder">E-Mail-Adresse bitte ergänzen</span>
+      </p>
+
+      <h3>Umsatzsteuer-Identifikationsnummer</h3>
+      <p>
+        Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+        <span class="placeholder">USt-IdNr. bitte ergänzen</span>
+      </p>
+
+      <h3>Berufsrechtliche Angaben</h3>
+      <p>
+        Berufsbezeichnung: Friseurin<br />
+        Verliehen in: Bundesrepublik Deutschland<br />
+        Zuständige Kammer: Handwerkskammer des Saarlandes, Hohenzollernstraße 47–49, 66117 Saarbrücken<br />
+        Maßgebliche berufsrechtliche Regelungen einsehbar unter
+        <a href="https://www.gesetze-im-internet.de/" target="_blank" rel="noopener noreferrer">gesetze-im-internet.de</a>.
+      </p>
+
+      <h3>Redaktionell verantwortlich gemäß § 18 Abs. 2 MStV</h3>
+      <p>Oufa Yousef, Anschrift wie oben.</p>
+
+      <h3>EU-Streitschlichtung</h3>
+      <p>
+        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+        <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">ec.europa.eu/consumers/odr</a>.
+      </p>
+
+      <h3>Verbraucherstreitbeilegung</h3>
+      <p>
+        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren
+        vor einer Verbraucherschlichtungsstelle teilzunehmen.
+      </p>
+
+      <h3>Haftung für Inhalte</h3>
+      <p>
+        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den
+        allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht
+        verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach
+        Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur
+        Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben
+        hiervon unberührt.
+      </p>
+
+      <h3>Haftung für Links</h3>
+      <p>
+        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss
+        haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die
+        Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten
+        verantwortlich.
+      </p>
+
+      <h3>Urheberrecht</h3>
+      <p>
+        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
+        deutschen Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung
+        außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen
+        Autors bzw. Erstellers.
+      </p>
+
+      <h3>Bildnachweise</h3>
+      <p>
+        Sämtliche auf dieser Website verwendeten Fotos stammen aus dem eigenen Atelier von Oufa
+        Hairstyling, sofern nicht anders gekennzeichnet.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <p>© <span id="year"></span> Oufa Hairstyling · Saarbrücken</p>
+      <div class="legal-links">
+        <a href="/">Startseite</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="/cookie.js" defer></script>
+</body>
+</html>

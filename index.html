@@ -83,10 +83,38 @@
 
   /* ---------- Gold text / utilities ---------- */
   .gold-text {
-    background: linear-gradient(135deg, var(--gold-3) 0%, var(--gold) 45%, var(--gold-2) 100%);
+    background: linear-gradient(
+      120deg,
+      var(--gold-3) 0%,
+      var(--gold) 30%,
+      #fff4cc 45%,
+      var(--gold) 60%,
+      var(--gold-2) 100%
+    );
+    background-size: 220% 100%;
+    background-position: 0% 50%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    animation: gold-shimmer 9s ease-in-out infinite;
+  }
+  @keyframes gold-shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gold-text { animation: none; }
+  }
+
+  /* Scroll progress — fine gold line at the very top */
+  .scroll-progress {
+    position: fixed;
+    left: 0; top: 0;
+    height: 2px; width: 0;
+    background: linear-gradient(90deg, var(--gold-3), var(--gold), var(--gold-2));
+    z-index: 100;
+    transition: width 80ms linear;
+    box-shadow: 0 0 12px rgba(212,166,74,.5);
   }
   .eyebrow {
     font-family: var(--font-sans);
@@ -124,21 +152,49 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 18px;
-    margin: 56px 0;
+    gap: 22px;
+    margin: 64px 0;
     color: var(--gold);
-    opacity: .85;
+    opacity: .9;
   }
   .ornament .line {
     height: 1px;
     flex: 1;
-    max-width: 240px;
+    max-width: 260px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    position: relative;
   }
+  .ornament .line::before,
+  .ornament .line::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    transform: translateY(-50%);
+    box-shadow: 0 0 8px rgba(212,166,74,.6);
+    opacity: .6;
+  }
+  .ornament .line::before { left: 20%; }
+  .ornament .line::after { left: 70%; }
   .ornament .glyph {
-    width: 34px; height: 34px;
+    width: 38px; height: 38px;
     display: grid; place-items: center;
+    position: relative;
   }
+  .ornament .glyph::before,
+  .ornament .glyph::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 4px; height: 4px;
+    border: 1px solid var(--gold);
+    transform: translateY(-50%) rotate(45deg);
+    opacity: .5;
+  }
+  .ornament .glyph::before { left: -10px; }
+  .ornament .glyph::after { right: -10px; }
 
   /* ---------- Buttons ---------- */
   .btn {
@@ -1013,62 +1069,6 @@
     margin-top: 2px;
   }
 
-  /* ---------- Impressum ---------- */
-  .impressum {
-    background: var(--bg-2);
-    padding: 96px 0;
-  }
-  .impressum-card {
-    max-width: 820px;
-    margin: 0 auto;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: var(--r-lg);
-    padding: 56px 52px;
-    box-shadow: var(--shadow-sm);
-  }
-  .impressum h2 {
-    margin-top: 14px;
-    font-size: clamp(28px, 3vw, 40px);
-  }
-  .impressum h3 {
-    font-family: var(--font-sans);
-    font-size: 12px;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin: 36px 0 10px;
-    font-weight: 600;
-  }
-  .impressum h3:first-of-type { margin-top: 32px; }
-  .impressum p {
-    font-size: 15px;
-    line-height: 1.75;
-    color: var(--muted);
-  }
-  .impressum p a {
-    color: var(--ink);
-    border-bottom: 1px solid rgba(201,88,103,.32);
-    transition: color 200ms var(--ease-out), border-color 200ms var(--ease-out);
-  }
-  .impressum p a:hover {
-    color: var(--gold);
-    border-bottom-color: var(--gold);
-  }
-  .impressum .placeholder {
-    color: var(--gold-2);
-    background: rgba(201,88,103,.08);
-    padding: 1px 8px;
-    border-radius: 4px;
-    font-family: var(--font-sans);
-    font-size: 13px;
-    letter-spacing: .03em;
-  }
-  @media (max-width: 560px) {
-    .impressum { padding: 72px 0; }
-    .impressum-card { padding: 40px 24px; }
-    .impressum p { font-size: 14px; }
-  }
 
   /* ---------- Footer ---------- */
   footer {
@@ -1220,9 +1220,283 @@
     .info-item p, .info-item a { font-size: 16px; }
     .fab { width: 54px; height: 54px; right: 18px; bottom: 18px; }
   }
+
+  /* =====================================================================
+     POLISH LAYER — adds depth and life without changing the gold + dark
+     + arabesque language. Targets specific moments per section.
+     ===================================================================== */
+
+  /* Subtle arabesque watermark used as decorative corner element */
+  .arabesque-corner {
+    position: absolute;
+    width: 180px; height: 180px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23d4a64a' stroke-width='.4' opacity='.5'><path d='M50 2 L98 50 L50 98 L2 50 Z'/><path d='M50 12 L88 50 L50 88 L12 50 Z'/><path d='M50 24 L76 50 L50 76 L24 50 Z'/><circle cx='50' cy='50' r='8'/><path d='M50 36 L64 50 L50 64 L36 50 Z'/></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: .35;
+    pointer-events: none;
+  }
+
+  /* ---------- Hero polish ---------- */
+  .hero { position: relative; }
+  .hero .arabesque-corner.tl { top: 80px; left: -50px; transform: rotate(-15deg); }
+  .hero .arabesque-corner.br { bottom: 40px; right: -50px; transform: rotate(15deg); width: 220px; height: 220px; opacity: .25; }
+
+  .hero-card {
+    position: relative;
+  }
+  .hero-card::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: var(--r-xl);
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      rgba(212,166,74,.55) 90deg,
+      transparent 180deg,
+      rgba(212,166,74,.4) 270deg,
+      transparent 360deg
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px;
+    pointer-events: none;
+    animation: hero-light 8s linear infinite;
+    opacity: .65;
+  }
+  @keyframes hero-light {
+    to { transform: rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-card::after { animation: none; }
+  }
+
+  .hero-card .badge {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* ---------- About polish ---------- */
+  .about { position: relative; }
+  .about .arabesque-corner.tr { top: 60px; right: -60px; transform: rotate(20deg); opacity: .22; }
+
+  .about-stats {
+    position: relative;
+  }
+  .about-stats::before {
+    content: "";
+    position: absolute;
+    top: -16px; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,166,74,.32) 30%, rgba(212,166,74,.32) 70%, transparent);
+  }
+  .stat .v {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: clamp(38px, 4vw, 56px) !important;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .about-visual .quote {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  /* ---------- Services polish ---------- */
+  .service {
+    position: relative;
+    transition: transform .35s cubic-bezier(.22,1,.36,1), border-color .35s ease, box-shadow .35s ease;
+  }
+  .service::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(212,166,74,.18), transparent 40%);
+    opacity: 0;
+    transition: opacity .4s ease;
+    pointer-events: none;
+  }
+  .service:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212,166,74,.55);
+    box-shadow:
+      0 24px 60px -25px rgba(0,0,0,.6),
+      0 0 0 1px rgba(212,166,74,.2);
+  }
+  .service:hover::before { opacity: 1; }
+  .service .icon {
+    transition: transform .4s cubic-bezier(.22,1,.36,1), color .35s ease;
+  }
+  .service:hover .icon {
+    transform: scale(1.08) rotate(-3deg);
+    color: var(--gold-3);
+  }
+  .service .price .amount {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    background: linear-gradient(135deg, var(--gold-3), var(--gold), var(--gold-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* ---------- Testimonials polish ---------- */
+  .review {
+    position: relative;
+    transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .35s ease;
+  }
+  .review:hover {
+    border-color: rgba(212,166,74,.4);
+  }
+  .review .quote {
+    font-family: var(--font-serif);
+    color: rgba(212,166,74,.35);
+    transition: color .35s ease, transform .35s ease;
+  }
+  .review:hover .quote { color: var(--gold); transform: translate(-2px, -2px); }
+
+  .review-attrib {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .review-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    background: radial-gradient(circle at 30% 30%, rgba(212,166,74,.35), rgba(212,166,74,.12));
+    border: 1px solid rgba(212,166,74,.4);
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--gold-3);
+    flex-shrink: 0;
+  }
+  .review-attrib-text {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .review-attrib-text strong {
+    color: var(--cream);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 1px;
+    font-size: 13px;
+  }
+  /* Hide the old .who when the new attribution is present */
+  .review .who { display: none; }
+
+  /* ---------- Booking polish ---------- */
+  .booking-card {
+    position: relative;
+  }
+  .booking-card .urgency {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(212,166,74,.08);
+    border: 1px solid rgba(212,166,74,.32);
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold-3);
+  }
+  .booking-card .urgency::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 8px rgba(212,166,74,.7);
+    animation: pulse-gold 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse-gold {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .55; transform: scale(.85); }
+  }
+
+  /* ---------- Contact polish ---------- */
+  .info-item {
+    transition: background .35s ease;
+  }
+  .info-item:hover {
+    background: rgba(212,166,74,.04);
+  }
+  .info-item .ic {
+    transition: background .35s ease, color .35s ease, box-shadow .35s ease;
+  }
+  .info-item:hover .ic {
+    background: rgba(212,166,74,.16);
+    color: var(--gold-3);
+    box-shadow: 0 0 0 1px rgba(212,166,74,.35), 0 8px 22px -8px rgba(212,166,74,.4);
+  }
+
+  .map-wrap {
+    position: relative;
+  }
+  .map-wrap::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(212,166,74,.4), transparent 40%, transparent 60%, rgba(212,166,74,.3));
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px;
+    pointer-events: none;
+    opacity: .55;
+  }
+
+  /* ---------- Footer polish ---------- */
+  .foot a {
+    position: relative;
+    transition: color .25s ease;
+  }
+  .foot ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -3px;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s cubic-bezier(.22,1,.36,1);
+  }
+  .foot ul li a:hover { color: var(--gold); }
+  .foot ul li a:hover::after { transform: scaleX(1); }
+  .foot-bottom a {
+    position: relative;
+    transition: color .25s ease;
+  }
+  .foot-bottom a:hover { color: var(--gold); }
 </style>
 </head>
 <body>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <!-- ===== HEADER ===== -->
 <header class="site" id="siteHeader">
@@ -1260,6 +1534,8 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="top">
+  <span class="arabesque-corner tl" aria-hidden="true"></span>
+  <span class="arabesque-corner br" aria-hidden="true"></span>
   <div class="container">
     <div class="hero-grid">
       <div class="reveal">
@@ -1308,6 +1584,7 @@
 
 <!-- ===== ABOUT ===== -->
 <section class="about" id="about">
+  <span class="arabesque-corner tr" aria-hidden="true"></span>
   <div class="container">
     <div class="about-grid">
       <div class="about-visual reveal" aria-hidden="true" style="background: url('https://i.ibb.co/27BghpXN/Bild-01-06-26-um-17-55.png') center/cover no-repeat #0c0a09;">
@@ -1485,6 +1762,13 @@
         <div class="stars" aria-hidden="true">★★★★★</div>
         <p>„Sie hat sich Zeit genommen und alles in nur 30 Minuten perfekt umgesetzt."</p>
         <div class="who">Google · Zufriedene Gästin</div>
+        <div class="review-attrib">
+          <div class="review-avatar" aria-hidden="true">Z</div>
+          <div class="review-attrib-text">
+            <strong>Zufriedene Gästin</strong>
+            Verifizierte Google-Bewertung
+          </div>
+        </div>
       </article>
 
       <article class="review reveal">
@@ -1492,6 +1776,13 @@
         <div class="stars" aria-hidden="true">★★★★★</div>
         <p>„Die Haare sahen soooo gut aus und es hat Mega gehalten."</p>
         <div class="who">Google · Stammkundin</div>
+        <div class="review-attrib">
+          <div class="review-avatar" aria-hidden="true">S</div>
+          <div class="review-attrib-text">
+            <strong>Stammkundin</strong>
+            Verifizierte Google-Bewertung
+          </div>
+        </div>
       </article>
 
       <article class="review reveal">
@@ -1499,6 +1790,13 @@
         <div class="stars" aria-hidden="true">★★★★★</div>
         <p>„Man merkt sofort die Professionalität und Leidenschaft im ganzen Team."</p>
         <div class="who">Google · Neukundin</div>
+        <div class="review-attrib">
+          <div class="review-avatar" aria-hidden="true">N</div>
+          <div class="review-attrib-text">
+            <strong>Neukundin</strong>
+            Verifizierte Google-Bewertung
+          </div>
+        </div>
       </article>
     </div>
 
@@ -1559,7 +1857,8 @@
       <span class="eyebrow">Termin sichern</span>
       <h2 style="margin-top: 18px;">Bereit für Ihr nächstes <span class="gold-text">Hair-Erlebnis</span>?</h2>
       <p class="lead">Rufen Sie uns einfach an oder schreiben Sie kurz per WhatsApp. Wir finden gemeinsam den passenden Termin.</p>
-      <div class="ctas">
+      <span class="urgency" aria-hidden="false">Heute geöffnet · Termine diese Woche möglich</span>
+      <div class="ctas" style="margin-top: 18px;">
         <a class="btn btn-gold" href="tel:+491607634655">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           0160 76 34 655
@@ -1649,92 +1948,6 @@
   </div>
 </section>
 
-<!-- ===== IMPRESSUM ===== -->
-<section class="impressum" id="impressum">
-  <div class="container">
-    <div class="impressum-card reveal">
-      <span class="eyebrow">Rechtliches</span>
-      <h2>Impressum</h2>
-
-      <h3>Angaben gemäß § 5 DDG</h3>
-      <p>
-        Oufa Hairstyling<br />
-        Inhaberin: Oufa Yousef<br />
-        Dudweilerstraße 2A<br />
-        66111 Saarbrücken<br />
-        Deutschland
-      </p>
-
-      <h3>Kontakt</h3>
-      <p>
-        Telefon: <a href="tel:+491607634655">0160 76 34 655</a><br />
-        E-Mail: <span class="placeholder">E-Mail-Adresse bitte ergänzen</span>
-      </p>
-
-      <h3>Umsatzsteuer-Identifikationsnummer</h3>
-      <p>
-        Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-        <span class="placeholder">USt-IdNr. bitte ergänzen</span>
-      </p>
-
-      <h3>Berufsrechtliche Angaben</h3>
-      <p>
-        Berufsbezeichnung: Friseurin<br />
-        Verliehen in: Bundesrepublik Deutschland<br />
-        Zuständige Kammer: Handwerkskammer des Saarlandes,
-        Hohenzollernstraße 47–49, 66117 Saarbrücken<br />
-        Maßgebliche berufsrechtliche Regelungen einsehbar unter
-        <a href="https://www.gesetze-im-internet.de/" target="_blank" rel="noopener noreferrer">gesetze-im-internet.de</a>.
-      </p>
-
-      <h3>Redaktionell verantwortlich gemäß § 18 Abs. 2 MStV</h3>
-      <p>Oufa Yousef, Anschrift wie oben.</p>
-
-      <h3>Verbraucherstreitbeilegung</h3>
-      <p>
-        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren
-        vor einer Verbraucherschlichtungsstelle teilzunehmen.
-      </p>
-
-      <h3>Haftung für Inhalte</h3>
-      <p>
-        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte
-        auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach
-        §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht
-        verpflichtet, übermittelte oder gespeicherte fremde Informationen zu
-        überwachen oder nach Umständen zu forschen, die auf eine
-        rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung
-        oder Sperrung der Nutzung von Informationen nach den allgemeinen
-        Gesetzen bleiben hiervon unberührt.
-      </p>
-
-      <h3>Haftung für Links</h3>
-      <p>
-        Unser Angebot enthält Links zu externen Websites Dritter, auf deren
-        Inhalte wir keinen Einfluss haben. Deshalb können wir für diese
-        fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
-        verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber
-        der Seiten verantwortlich.
-      </p>
-
-      <h3>Urheberrecht</h3>
-      <p>
-        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
-        diesen Seiten unterliegen dem deutschen Urheberrecht.
-        Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
-        Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der
-        schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
-      </p>
-
-      <h3>Bildnachweise</h3>
-      <p>
-        Sämtliche auf dieser Website verwendeten Fotos stammen aus dem
-        eigenen Atelier von Oufa Hairstyling, sofern nicht anders gekennzeichnet.
-      </p>
-    </div>
-  </div>
-</section>
-
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="container">
@@ -1764,7 +1977,8 @@
           <li><a href="#services">Leistungen</a></li>
           <li><a href="#testimonials">Erlebnisse</a></li>
           <li><a href="#contact">Kontakt</a></li>
-          <li><a href="#impressum">Impressum</a></li>
+          <li><a href="/impressum.html">Impressum</a></li>
+          <li><a href="/datenschutz.html">Datenschutz</a></li>
         </ul>
       </div>
 
@@ -1781,7 +1995,7 @@
 
     <div class="foot-bottom">
       <span>© <span id="year"></span> Oufa Hairstyling · Alle Rechte vorbehalten</span>
-      <span><a href="#impressum">Impressum</a> · Made with ✦ in Saarbrücken</span>
+      <span><a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a> · Made with ✦ in Saarbrücken</span>
     </div>
   </div>
 </footer>
@@ -1795,10 +2009,20 @@
   // Ensure we always start at the hero (in case the early head script raced the browser)
   window.scrollTo(0, 0);
 
-  // Header background on scroll
+  // Header background + scroll progress
   const header = document.getElementById('siteHeader');
-  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+  const scrollProgress = document.getElementById('scrollProgress');
+  const onScroll = () => {
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 24);
+    if (scrollProgress) {
+      const max = (document.documentElement.scrollHeight - window.innerHeight) || 1;
+      const pct = Math.min(100, Math.max(0, (y / max) * 100));
+      scrollProgress.style.width = pct + '%';
+    }
+  };
   document.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
   onScroll();
 
   // Reveal on scroll
@@ -1931,5 +2155,6 @@
   }
 </script>
 
+<script src="/cookie.js" defer></script>
 </body>
 </html>

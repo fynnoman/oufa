@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Datenschutz — Oufa Hairstyling Saarbrücken</title>
+<meta name="description" content="Datenschutzerklärung von Oufa Hairstyling. Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO." />
+<meta name="theme-color" content="#0c0a09" />
+<meta name="robots" content="index, follow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg:         #0c0a09;
+    --bg-2:       #14110f;
+    --surface:    #1c1917;
+    --line:       #2a2420;
+    --cream:      #f6efe3;
+    --cream-2:    #efe6d3;
+    --muted:      #b9ad97;
+    --ink:        #0c0a09;
+    --gold:       #d4a64a;
+    --gold-2:     #b9892f;
+    --gold-3:     #f3d27b;
+    --gold-soft:  rgba(212, 166, 74, 0.18);
+    --font-display: "Cinzel", "Cormorant", serif;
+    --font-serif:   "Cormorant", "Playfair Display", Georgia, serif;
+    --font-sans:    "Montserrat", "Inter", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--cream);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  img, svg { display: block; max-width: 100%; }
+  ::selection { background: var(--gold); color: var(--ink); }
+
+  .container { width: 100%; max-width: 1240px; padding: 0 24px; margin: 0 auto; }
+  .gold-text {
+    background: linear-gradient(135deg, var(--gold-3) 0%, var(--gold) 45%, var(--gold-2) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .eyebrow {
+    font-family: var(--font-sans); font-weight: 500;
+    letter-spacing: .35em; text-transform: uppercase;
+    font-size: 12px; color: var(--gold);
+    display: inline-flex; align-items: center; gap: 14px;
+  }
+  .eyebrow::before, .eyebrow::after {
+    content: ""; width: 28px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  header.site {
+    position: sticky; top: 0; left: 0; right: 0; z-index: 60;
+    background: rgba(12,10,9,.78);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom: 1px solid rgba(212,166,74,.18);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+  .brand {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 20px; letter-spacing: .14em;
+  }
+  .brand .mark {
+    width: 38px; height: 38px; display: grid; place-items: center;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--gold-3), var(--gold-2) 70%, #6b4d12 100%);
+    box-shadow: 0 6px 20px -6px rgba(212,166,74,.55);
+    color: var(--ink);
+  }
+  .brand .name strong { display: block; font-weight: 700; line-height: 1; }
+  .brand .name span { font-size: 10px; letter-spacing: .35em; color: var(--muted); }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--muted);
+    padding: 12px 18px; border-radius: 999px;
+    border: 1px solid rgba(246,239,227,.18);
+    transition: color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .back-link:hover { color: var(--gold); border-color: var(--gold); background: rgba(212,166,74,.06); }
+  .back-link svg { transition: transform .3s cubic-bezier(.22,1,.36,1); }
+  .back-link:hover svg { transform: translateX(-3px); }
+
+  .page-hero {
+    padding: 140px 0 60px; position: relative;
+    background:
+      radial-gradient(60% 80% at 50% 0%, rgba(212,166,74,.10), transparent 60%),
+      var(--bg);
+    text-align: center;
+  }
+  .page-hero::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,166,74,.32), transparent);
+  }
+  .page-hero h1 {
+    font-family: var(--font-serif); font-weight: 500;
+    font-size: clamp(42px, 5.5vw, 76px); line-height: 1.06;
+    margin: 22px 0 18px; letter-spacing: -0.01em;
+  }
+  .page-hero p.lead { color: var(--muted); max-width: 640px; margin: 0 auto; font-size: 16px; }
+
+  .legal { background: var(--bg-2); padding: 80px 0 120px; }
+  .legal-card {
+    max-width: 820px; margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 56px 52px;
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,.55);
+    position: relative;
+  }
+  .legal-card::before {
+    content: ""; position: absolute; top: -1px; left: 32px; right: 32px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,166,74,.4), transparent);
+  }
+  .legal-card h3 {
+    font-family: var(--font-sans);
+    font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+    color: var(--gold); margin: 40px 0 10px; font-weight: 600;
+    display: flex; align-items: baseline; gap: 14px;
+  }
+  .legal-card h3::before {
+    content: ""; width: 22px; height: 1px;
+    background: var(--gold); flex-shrink: 0;
+  }
+  .legal-card h3:first-of-type { margin-top: 12px; }
+  .legal-card p {
+    font-size: 15px; line-height: 1.78; color: var(--cream-2);
+    margin: 0 0 12px;
+  }
+  .legal-card p a {
+    color: var(--gold-3);
+    border-bottom: 1px solid rgba(212,166,74,.35);
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .legal-card p a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+  .legal-card ul {
+    list-style: none; margin: 8px 0 18px; padding: 0;
+  }
+  .legal-card ul li {
+    font-size: 15px; line-height: 1.7; color: var(--cream-2);
+    padding-left: 22px; position: relative; margin-bottom: 6px;
+  }
+  .legal-card ul li::before {
+    content: ""; position: absolute;
+    left: 0; top: 12px;
+    width: 10px; height: 1px;
+    background: var(--gold);
+  }
+  .legal-card .meta-cookie-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 10px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 1px solid rgba(212,166,74,.4);
+    background: rgba(212,166,74,.06);
+    color: var(--gold);
+    font-size: 12px; font-weight: 600;
+    letter-spacing: .14em; text-transform: uppercase;
+    cursor: pointer;
+    transition: background .25s ease, transform .25s ease;
+  }
+  .legal-card .meta-cookie-btn:hover { background: rgba(212,166,74,.16); transform: translateY(-1px); }
+
+  footer {
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    padding: 48px 0 32px;
+  }
+  .foot {
+    display: flex; flex-wrap: wrap;
+    align-items: center; justify-content: space-between;
+    gap: 24px;
+  }
+  .foot p, .foot a { color: var(--muted); font-size: 13px; }
+  .foot .legal-links { display: flex; gap: 28px; }
+  .foot .legal-links a {
+    position: relative; transition: color .25s ease;
+  }
+  .foot .legal-links a::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -4px;
+    height: 1px; background: var(--gold);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform .35s cubic-bezier(.22,1,.36,1);
+  }
+  .foot .legal-links a:hover { color: var(--gold); }
+  .foot .legal-links a:hover::after { transform: scaleX(1); }
+
+  @media (max-width: 720px) {
+    .page-hero { padding: 110px 0 50px; }
+    .legal { padding: 60px 0 80px; }
+    .legal-card { padding: 40px 24px; border-radius: 18px; }
+    .legal-card p, .legal-card ul li { font-size: 14px; }
+    .legal-card h3 { font-size: 10px; letter-spacing: .22em; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <div class="nav">
+      <a href="/" class="brand" aria-label="Oufa Hairstyling — zurück zur Startseite">
+        <span class="mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 L20 12 L12 22 L4 12 Z"/>
+            <path d="M12 6 L17 12 L12 18 L7 12 Z"/>
+          </svg>
+        </span>
+        <span class="name">
+          <strong>OUFA</strong>
+          <span>HAIRSTYLING</span>
+        </span>
+      </a>
+      <a href="/" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        Zur Startseite
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Privatsphäre</span>
+    <h1>Datenschutz<span class="gold-text">erklärung</span></h1>
+    <p class="lead">Wir nehmen den Schutz Ihrer persönlichen Daten ernst. Dieses Dokument beschreibt, welche Daten beim Besuch unserer Website verarbeitet werden — und warum.</p>
+  </div>
+</section>
+
+<section class="legal">
+  <div class="container">
+    <div class="legal-card">
+
+      <h3>1. Verantwortlicher</h3>
+      <p>
+        Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der DSGVO ist:
+      </p>
+      <p>
+        Oufa Hairstyling<br />
+        Inhaberin: Oufa Yousef<br />
+        Dudweilerstraße 2A<br />
+        66111 Saarbrücken<br />
+        Telefon: <a href="tel:+491607634655">0160 76 34 655</a>
+      </p>
+
+      <h3>2. Allgemeines zur Datenverarbeitung</h3>
+      <p>
+        Die Verarbeitung personenbezogener Daten erfolgt ausschließlich auf gesetzlicher Grundlage
+        (Art. 6 DSGVO) und nur in dem Umfang, der für den jeweiligen Zweck erforderlich ist. Wir
+        erheben keine Daten zu Werbezwecken und betreiben kein Profiling.
+      </p>
+
+      <h3>3. Zugriffsdaten / Server-Logfiles</h3>
+      <p>
+        Beim Besuch unserer Website erfasst der Hosting-Provider in sogenannten Logfiles Daten, die
+        Ihr Browser automatisch übermittelt. Dies betrifft:
+      </p>
+      <ul>
+        <li>IP-Adresse (anonymisiert, sobald technisch möglich)</li>
+        <li>Datum und Uhrzeit des Aufrufs</li>
+        <li>aufgerufene Seite</li>
+        <li>verwendeter Browser und Betriebssystem</li>
+        <li>Referer-URL (vorher besuchte Seite)</li>
+      </ul>
+      <p>
+        Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren,
+        funktionierenden Betrieb der Website). Speicherdauer: typischerweise 7 Tage.
+      </p>
+
+      <h3>4. Cookies</h3>
+      <p>
+        Diese Website verwendet ausschließlich technisch notwendige Cookies bzw. ähnliche
+        Speichermechanismen (z. B. <em>localStorage</em>), damit die Seite ordnungsgemäß
+        funktioniert — insbesondere für die Speicherung Ihrer Cookie-Entscheidung selbst.
+      </p>
+      <ul>
+        <li><strong>oufa-cookie-consent</strong> — speichert Ihre Auswahl aus dem Cookie-Banner.
+          Keine personenbezogenen Daten. Speicherdauer: dauerhaft (bis Sie es zurücksetzen).</li>
+      </ul>
+      <p>
+        Es werden <strong>keine Tracking-, Werbe- oder Analyse-Cookies</strong> eingesetzt.
+        Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO und § 25 Abs. 2 Nr. 2 TDDDG.
+      </p>
+      <p>
+        <button type="button" class="meta-cookie-btn" onclick="if(window.oufaCookies){window.oufaCookies.open();}">
+          Cookie-Einstellungen erneut öffnen
+        </button>
+      </p>
+
+      <h3>5. Eingebundene externe Dienste</h3>
+      <p>
+        Unsere Website bindet folgende externe Inhalte ein. Beim Aufruf der jeweiligen Seite werden
+        Daten (insbesondere Ihre IP-Adresse) an die genannten Anbieter übertragen.
+      </p>
+      <ul>
+        <li><strong>Google Fonts</strong> (Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4,
+          Irland) — Schriftarten werden direkt von Google-Servern geladen, damit die Website korrekt
+          dargestellt wird. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.
+          Mehr: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</li>
+        <li><strong>Google Maps</strong> — auf der Kontaktseite ist ein Maps-Ausschnitt eingebettet.
+          Beim Laden werden Verbindungsdaten an Google übertragen. Rechtsgrundlage: Art. 6 Abs. 1
+          lit. f DSGVO.
+          Mehr: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</li>
+        <li><strong>ImgBB</strong> (Image Hosting) — Galerie-Bilder werden über ImgBB ausgeliefert.
+          Beim Laden überträgt Ihr Browser eine IP-Adresse an deren Server.
+          Mehr: <a href="https://ibb.co/privacy-policy" target="_blank" rel="noopener noreferrer">ibb.co/privacy-policy</a>.</li>
+      </ul>
+
+      <h3>6. Kontaktaufnahme</h3>
+      <p>
+        Wenn Sie uns telefonisch, per WhatsApp oder per E-Mail erreichen, werden Ihre Angaben zur
+        Beantwortung Ihrer Anfrage verarbeitet. Die Verarbeitung erfolgt auf Grundlage Art. 6 Abs. 1
+        lit. b DSGVO (Anbahnung eines Vertrags) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes
+        Interesse). Wir geben Ihre Daten nicht an Dritte weiter und löschen sie, sobald der Zweck
+        entfallen ist und keine gesetzlichen Aufbewahrungsfristen entgegenstehen.
+      </p>
+
+      <h3>7. Ihre Rechte</h3>
+      <p>Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:</p>
+      <ul>
+        <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+        <li>Recht auf Berichtigung oder Löschung (Art. 16, 17 DSGVO)</li>
+        <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+        <li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+        <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      </ul>
+      <p>
+        Sie haben außerdem das Recht, sich bei einer Aufsichtsbehörde über die Verarbeitung Ihrer
+        personenbezogenen Daten zu beschweren. Zuständig ist das
+        <a href="https://www.datenschutz.saarland.de/" target="_blank" rel="noopener noreferrer">Unabhängige Datenschutzzentrum Saarland</a>.
+      </p>
+
+      <h3>8. Datensicherheit</h3>
+      <p>
+        Diese Website wird über HTTPS ausgeliefert. Ihre Verbindung ist während der Übertragung
+        verschlüsselt.
+      </p>
+
+      <h3>9. Änderungen dieser Datenschutzerklärung</h3>
+      <p>
+        Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen
+        rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen umzusetzen.
+      </p>
+
+      <h3>Stand</h3>
+      <p>
+        Diese Datenschutzerklärung wurde zuletzt aktualisiert im
+        <span id="dsStand">Juni 2026</span>.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <p>© <span id="year"></span> Oufa Hairstyling · Saarbrücken</p>
+      <div class="legal-links">
+        <a href="/">Startseite</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="/cookie.js" defer></script>
+</body>
+</html>
