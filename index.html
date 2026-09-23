@@ -1586,7 +1586,7 @@
     line-height: 1.4;
   }
   .review-attrib-text strong {
-    color: var(--cream);
+    color: var(--ink);
     font-weight: 600;
     display: block;
     margin-bottom: 1px;
@@ -1693,16 +1693,29 @@
   .trainings {
     position: relative;
     padding: 120px 0;
-    background: linear-gradient(180deg, var(--bg) 0%, #0f0a08 50%, var(--bg) 100%);
+    background: #14100e;
+    color: var(--cream);
     overflow: hidden;
+  }
+  .trainings .section-head h2 { color: var(--cream); }
+  .trainings .section-head p { color: rgba(253,248,243,.72); }
+  .trainings .btn-ghost {
+    color: var(--cream);
+    border-color: rgba(253,248,243,.28);
+    background: transparent;
+  }
+  .trainings .btn-ghost:hover {
+    color: var(--gold-3);
+    border-color: var(--gold-3);
+    background: rgba(232,154,166,.06);
   }
   .trainings::before {
     content: "";
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(600px 400px at 15% 20%, rgba(212,175,55,.08), transparent 60%),
-      radial-gradient(500px 350px at 85% 80%, rgba(201,88,103,.06), transparent 60%);
+      radial-gradient(600px 400px at 15% 20%, rgba(212,175,55,.10), transparent 60%),
+      radial-gradient(500px 350px at 85% 80%, rgba(201,88,103,.09), transparent 60%);
     pointer-events: none;
   }
   .trainings .container { position: relative; z-index: 1; }
@@ -1872,9 +1885,9 @@
     align-items: center;
     margin-top: 56px;
     padding: 28px 32px;
-    border: 1px solid rgba(212,175,55,.25);
+    border: 1px solid rgba(212,175,55,.35);
     border-radius: 8px;
-    background: linear-gradient(135deg, rgba(212,175,55,.06), rgba(201,88,103,.04));
+    background: rgba(255,255,255,.04);
   }
   .trainings-cta p {
     margin: 0;
@@ -1892,6 +1905,177 @@
     .trainings-gallery { grid-template-columns: 1fr; gap: 16px; margin-top: 48px; }
     .trainings-gallery figure { max-width: 480px; margin: 0 auto; width: 100%; }
     .trainings-cta { flex-direction: column; align-items: stretch; text-align: center; padding: 24px 20px; }
+  }
+
+  /* =====================================================================
+     MOBILE COMPREHENSIVE PASS — readability, touch targets, safe areas
+     ===================================================================== */
+
+  /* Header always has a legible background on mobile (not just when scrolled) */
+  @media (max-width: 980px) {
+    header.site {
+      background: rgba(251,245,239,.94);
+      backdrop-filter: blur(14px) saturate(140%);
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
+      border-bottom: 1px solid rgba(201,88,103,.14);
+    }
+    .nav { padding: 12px 0; }
+    .menu-toggle {
+      border-color: rgba(61,31,36,.28);
+      color: var(--ink);
+      background: var(--surface);
+    }
+    /* Mobile nav sheet — driven by the .open class on <nav.links> */
+    nav.links.open {
+      display: flex !important;
+      position: fixed;
+      top: 68px;
+      left: 16px;
+      right: 16px;
+      flex-direction: column;
+      background: rgba(253,248,243,.98);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      backdrop-filter: blur(20px) saturate(140%);
+      padding: 20px;
+      gap: 4px;
+      border: 1px solid rgba(201,88,103,.22);
+      border-radius: 18px;
+      box-shadow: 0 24px 60px -20px rgba(92,42,58,.35);
+      z-index: 65;
+    }
+    nav.links.open a {
+      opacity: 1;
+      color: var(--ink);
+      font-size: 14px;
+      letter-spacing: .16em;
+      padding: 14px 10px;
+      border-bottom: 1px solid rgba(201,88,103,.10);
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+    }
+    nav.links.open a:last-child { border-bottom: 0; }
+    nav.links.open a::after { display: none; }
+    .nav-cta .btn-gold { padding: 12px 18px; font-size: 12px; }
+  }
+
+  /* Hero on mobile: less top padding, tighter meta, readable brand accent */
+  @media (max-width: 720px) {
+    .hero { min-height: auto; padding: 92px 0 56px; }
+    .hero h1 { font-size: clamp(34px, 9vw, 48px); line-height: 1.1; margin-top: 12px; }
+    .hero p.lead { font-size: 16px; line-height: 1.55; }
+    .hero-cta { gap: 10px; }
+    .hero-cta .btn { flex: 1 1 auto; min-width: 0; }
+    .hero-meta {
+      gap: 14px;
+      font-size: 12px;
+      color: var(--ink);
+      opacity: .88;
+    }
+    .hero-meta > div { flex: 1 1 100%; }
+    .hero-meta strong { color: var(--ink); }
+    .hero-images { max-width: 100%; }
+    .hero-img { border-radius: 20px; }
+    .hero-note { padding: 16px 18px; }
+    .hero-note p { font-size: 15px; line-height: 1.45; }
+    .hero-insta {
+      padding: 12px 18px;
+      font-size: 13px;
+      width: 100%;
+      justify-content: center;
+    }
+    .hero .arabesque-corner { display: none; }
+  }
+
+  /* Ensure all buttons hit the 44px minimum touch target on mobile */
+  @media (max-width: 720px) {
+    .btn { min-height: 48px; padding: 14px 22px; font-size: 12.5px; letter-spacing: .1em; }
+    .btn-gold, .btn-ghost, .btn-dark { line-height: 1; }
+  }
+
+  /* About/services/reviews tightening on small screens */
+  @media (max-width: 720px) {
+    section { padding: 72px 0; }
+    section .section-head { margin-bottom: 48px; }
+    section .section-head p { font-size: 16px; line-height: 1.55; margin-top: 16px; }
+    .about-grid { gap: 40px; }
+    .about-visual { aspect-ratio: 4/5; }
+    .about-visual .quote { bottom: 22px; left: 22px; right: 22px; font-size: 18px; }
+    .about-text p { font-size: 15.5px; line-height: 1.75; }
+    .about-stats { gap: 16px; margin-top: 36px; padding-top: 28px; }
+    .stat .v { font-size: 30px !important; }
+    .stat .l { font-size: 11px; letter-spacing: .16em; }
+
+    .reviews-summary { padding: 20px 22px; gap: 14px; }
+    .reviews-summary .big { font-size: 40px; }
+    .reviews-summary .src { font-size: 15px; }
+    .review { padding: 32px 26px 30px; }
+    .review p { font-size: 16px; line-height: 1.55; }
+    .review .quote { top: -12px; left: 22px; width: 38px; height: 38px; font-size: 22px; }
+
+    .booking-card { padding: 48px 24px; }
+    .booking-card .lead { font-size: 16px; }
+    .booking-card .ctas { gap: 10px; }
+    .booking-card .ctas .btn { flex: 1 1 100%; }
+
+    .contact-info { padding: 32px 22px; gap: 18px; }
+    .info-item { grid-template-columns: 42px 1fr; gap: 14px; padding: 14px 0; }
+    .info-item .ic { width: 42px; height: 42px; }
+    .info-item p, .info-item a { font-size: 16px; }
+    .info-item small { font-size: 12px; }
+    .hours-list { font-size: 15px; }
+    .map-wrap, .map-wrap iframe { min-height: 380px; }
+    .map-overlay {
+      position: static;
+      margin: 0;
+      border-radius: 0 0 var(--r-lg) var(--r-lg);
+      background: rgba(253,248,243,.96);
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+      gap: 12px;
+    }
+    .map-overlay .btn { align-self: center; }
+
+    .trainings { padding: 72px 0; }
+    .trainings-copy h2 { font-size: 30px; line-height: 1.15; }
+    .trainings-copy p.lead { font-size: 16px; line-height: 1.6; }
+    .trainings-features li { font-size: 14.5px; line-height: 1.5; }
+    .trainings-cta p { font-size: 15.5px; }
+    .trainings-cta .btn { align-self: center; }
+  }
+
+  /* Very small phones */
+  @media (max-width: 400px) {
+    .container { padding: 0 16px; }
+    .hero { padding: 88px 0 48px; }
+    .hero h1 { font-size: 32px; }
+    .hero-cta { flex-direction: column; }
+    .hero-cta .btn { width: 100%; }
+    .hero-meta { font-size: 11.5px; letter-spacing: .08em; }
+    .btn { font-size: 12px; padding: 14px 18px; letter-spacing: .08em; }
+    .brand { font-size: 15px; letter-spacing: .14em; }
+    .brand .mark { width: 26px; height: 26px; }
+    .brand .name span { font-size: 8px; letter-spacing: .26em; }
+    .service-group .group-title { font-size: 20px; }
+    .price-list li { font-size: 15px; }
+    .price-list .price { font-size: 14px; }
+    .booking-card { padding: 40px 18px; }
+    .booking-card .lead { font-size: 15px; }
+    .reviews-summary { flex-direction: column; align-items: center; gap: 10px; }
+    .reviews-summary > div { text-align: center; }
+    .exp-item .ic { width: 54px; height: 54px; }
+    .exp-item h4 { font-size: 16px; }
+    .exp-item p { font-size: 13px; }
+  }
+
+  /* FAB positioning with iOS safe-area, larger tap target on very small screens */
+  .fab {
+    right: max(20px, env(safe-area-inset-right));
+    bottom: max(20px, env(safe-area-inset-bottom));
+  }
+  @media (max-width: 400px) {
+    .fab { width: 56px; height: 56px; }
   }
 </style>
 </head>
@@ -1946,7 +2130,7 @@
           auf moderne Kunst trifft.
         </h1>
         <p class="lead">
-          Willkommen bei <strong style="color:var(--cream)">Oufa Hairstyling</strong> — ein Salon, in dem Schnitt, Farbe und Styling
+          Willkommen bei <strong style="color:var(--ink)">Oufa Hairstyling</strong> — ein Salon, in dem Schnitt, Farbe und Styling
           mit Ruhe, Präzision und Hingabe zelebriert werden.
         </p>
 
@@ -2637,36 +2821,34 @@
   // Year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Mobile menu (simple anchor-based: scroll-spy not needed)
+  // Mobile menu — class-based toggle so CSS controls all styling / contrast
   const menuBtn = document.getElementById('menuBtn');
   const nav = document.querySelector('nav.links');
   if (menuBtn && nav) {
+    const closeMenu = () => {
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Menü öffnen');
+    };
+    const openMenu = () => {
+      nav.classList.add('open');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      menuBtn.setAttribute('aria-label', 'Menü schließen');
+    };
+    menuBtn.setAttribute('aria-expanded', 'false');
     menuBtn.addEventListener('click', () => {
-      const open = nav.style.display === 'flex';
-      if (open) {
-        nav.style.display = '';
-        nav.style.position = '';
-        nav.style.flexDirection = '';
-        nav.style.background = '';
-        nav.style.padding = '';
-        nav.style.gap = '';
-      } else {
-        nav.style.display = 'flex';
-        nav.style.position = 'absolute';
-        nav.style.top = '66px';
-        nav.style.left = '20px';
-        nav.style.right = '20px';
-        nav.style.flexDirection = 'column';
-        nav.style.background = 'rgba(253,248,243,.96)';
-        nav.style.backdropFilter = 'blur(14px)';
-        nav.style.padding = '24px';
-        nav.style.gap = '18px';
-        nav.style.border = '1px solid rgba(201,88,103,.25)';
-        nav.style.borderRadius = '16px';
-      }
+      nav.classList.contains('open') ? closeMenu() : openMenu();
     });
     nav.addEventListener('click', (e) => {
-      if (e.target.tagName === 'A') menuBtn.click();
+      if (e.target.tagName === 'A') closeMenu();
+    });
+    document.addEventListener('click', (e) => {
+      if (!nav.classList.contains('open')) return;
+      if (nav.contains(e.target) || menuBtn.contains(e.target)) return;
+      closeMenu();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('open')) closeMenu();
     });
   }
 </script>

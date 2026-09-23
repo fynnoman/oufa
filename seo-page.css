@@ -504,3 +504,75 @@ footer {
   .faq-section { padding: 60px 0 80px; }
   .final-cta { padding: 70px 0 90px; }
 }
+
+/* Mobile pass — readability, touch targets, header behaviour */
+@media (max-width: 720px) {
+  .container { padding: 0 20px; }
+  header.site {
+    background: rgba(251,245,239,.96);
+    border-bottom: 1px solid rgba(201,88,103,.14);
+  }
+  .nav { padding: 14px 0; gap: 12px; flex-wrap: wrap; }
+  .brand { font-size: 15px; letter-spacing: .14em; }
+  .brand .mark { width: 28px; height: 28px; }
+  .brand .name span { font-size: 8px; letter-spacing: .26em; }
+  .back-link {
+    padding: 12px 16px;
+    font-size: 11.5px;
+    min-height: 44px;
+    background: var(--surface);
+    border-color: rgba(61,31,36,.22);
+    color: var(--ink);
+  }
+  .page-hero { padding: 100px 0 44px; }
+  .page-hero .breadcrumb {
+    font-size: 10.5px;
+    letter-spacing: .14em;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: var(--ink);
+  }
+  .page-hero .breadcrumb a { color: var(--ink); opacity: .72; }
+  .page-hero h1 { font-size: clamp(30px, 8vw, 42px); line-height: 1.12; }
+  .page-hero p.lead { font-size: 16px; line-height: 1.55; }
+  .cta-row { gap: 10px; width: 100%; justify-content: center; }
+  .btn {
+    padding: 14px 22px;
+    font-size: 12.5px;
+    min-height: 48px;
+    letter-spacing: .1em;
+    line-height: 1;
+  }
+  .prose-section { padding: 48px 0; }
+  .prose-grid h2 { font-size: 26px; line-height: 1.15; }
+  .prose-grid p, .prose-grid ul li { font-size: 15.5px; line-height: 1.7; }
+  .feature-card { padding: 22px 20px; }
+  .feature-card h3 { font-size: 20px; }
+  .faq-section { padding: 48px 0 64px; }
+  .faq-section h2 { font-size: 26px; line-height: 1.15; }
+  .faq-item { padding: 20px 22px; }
+  .faq-item summary { font-size: 16px; }
+  .faq-item p { font-size: 14.5px; line-height: 1.6; }
+  .related-section { padding: 56px 0 72px; }
+  .related-card { padding: 22px 22px; }
+  .related-card h3 { font-size: 18px; }
+  .final-cta { padding: 60px 0 78px; }
+  .final-cta h2 { font-size: 28px; line-height: 1.15; }
+  .final-cta p { font-size: 15.5px; }
+  .foot { flex-direction: column; text-align: center; gap: 16px; }
+  .foot .legal-links { justify-content: center; gap: 18px; }
+}
+
+@media (max-width: 400px) {
+  .container { padding: 0 16px; }
+  .nav { padding: 12px 0; }
+  .cta-row { flex-direction: column; }
+  .cta-row .btn { width: 100%; }
+  .btn { font-size: 12px; padding: 14px 18px; letter-spacing: .08em; }
+  .page-hero h1 { font-size: 28px; }
+  .page-hero p.lead { font-size: 15px; }
+  .prose-grid h2 { font-size: 24px; }
+  .faq-item { padding: 18px 18px; }
+  .faq-item summary { font-size: 15px; }
+  .back-link { padding: 10px 14px; font-size: 11px; }
+}
